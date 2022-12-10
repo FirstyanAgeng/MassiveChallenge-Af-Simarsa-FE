@@ -1,7 +1,7 @@
 import { Container, Card, Form, Button } from "react-bootstrap";
 // import { useNavigate } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
-import {React, useState, useEffect } from "react";
+import {React, useState, } from "react";
 // import { LoginUser, reset } from "../../features/authSlice";
 import axios  from "axios";
 import Logo1 from "../../assets/images/logo1.png";
@@ -14,6 +14,7 @@ const Login = () => {
   
   const [id, setId] = useState("")
   const [pass, setPass] = useState("")
+  const [msg, setMsg] = useState('');
   // const dispatch = useDispatch();
   // const navigate = useNavigate();
   // const { user, isError, isSuccess, isLoading, message } = useSelector(
@@ -40,7 +41,7 @@ const Login = () => {
     setPass(inputPass)
   }
   
-  const userLogin = () =>{
+  const userLogin = async (e) =>{
     console.log('Ready')
     console.log('ID: ', id)
     console.log('Password: ', pass) 
@@ -48,18 +49,34 @@ const Login = () => {
       nip:id, 
       password: pass 
     }
-    // event.preventDefault();
-    axios({
-      method: 'post',
-      url: 'http://localhost:3200/users/login',
-      data: requestingData
-    })
-    .then((result)=>{
-      localStorage.setItem("id", result.data.id)
-      localStorage.setItem("nama", result.data.nama)
-      window.location.replace("/dashboard")
-    })
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:3200/users/login', {
+        requestingData
+      })
+      .then((result)=>{
+        localStorage.setItem("id", result.data.id)
+        localStorage.setItem("nama", result.data.nama)
+        window.location.replace("/dashboard")
+        
+      }) 
+    } catch (error) {
+      if (error.res) {
+       setMsg(error.res.data.msg) 
+      }
+    }
+    // axios({
+    //   method: 'post',
+    //   url: 'http://localhost:3200/users/login',
+    //   data: requestingData
+    // })
+    // .then((result)=>{
+    //   localStorage.setItem("id", result.data.id)
+    //   localStorage.setItem("nama", result.data.nama)
+    //   window.location.replace("/dashboard")
+    // })
   }
+  
 
   return (
     <>
@@ -69,6 +86,7 @@ const Login = () => {
             <Card.Img variant="top" src={Logo1} />
             <Card.Body>
               <h3 className="log">LOGIN</h3>
+              <p>{msg}</p>
               <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className="hdua">ID</Form.Label>
