@@ -1,6 +1,8 @@
 import { Container, Card, Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import {React, useState} from "react";
+// import { useNavigate } from "react-router-dom";
+// import { useDispatch, useSelector } from "react-redux";
+import {React, useState, useEffect } from "react";
+// import { LoginUser, reset } from "../../features/authSlice";
 import axios  from "axios";
 import Logo1 from "../../assets/images/logo1.png";
 import "../../styles/admin.css";
@@ -12,6 +14,23 @@ const Login = () => {
   
   const [id, setId] = useState("")
   const [pass, setPass] = useState("")
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
+  // const { user, isError, isSuccess, isLoading, message } = useSelector(
+  //   (state) => state.auth
+  // );
+
+  // useEffect(() => {
+  //   if (user || isSuccess) {
+  //     navigate("/dashboard");
+  //   }
+  //   dispatch(reset());
+  // }, [user, isSuccess, dispatch, navigate]);
+
+  // const Auth = (e) => {
+  //   e.preventDefault();
+  //   dispatch(LoginUser({ id, pass }));
+  // };
 
   const handleID = (inputNIP) =>{
     setId(inputNIP)
@@ -29,7 +48,7 @@ const Login = () => {
       nip:id, 
       password: pass 
     }
-    // e.preventDefault();
+    // event.preventDefault();
     axios({
       method: 'post',
       url: 'http://localhost:3200/users/login',
@@ -73,8 +92,7 @@ const Login = () => {
                     size="lg"
                     // onClick={() => navigate(ADMIN_DASHBOARD)}
                     onClick={() => userLogin()}
-                  >
-                    MASUK
+                  >Masuk
                   </Button>
                 </div>
               </Form>
