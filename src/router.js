@@ -15,6 +15,7 @@ const RIWAYAT_PASIEN = "/riwayat-pasien";
 const DAFTAR_PASIEN_BARU = "/daftar-pasienbaru";
 const DAFTAR_BERHASIL = "/daftar-berhasil";
 const KARTU_ANTRIAN = "/kartu-antrian";
+const DAFTAR_PASIEN_LAMA = "/daftar-pasienlama"
 
 export {
   HOME,
@@ -34,4 +35,5 @@ export {
   DAFTAR_PASIEN_BARU,
   DAFTAR_BERHASIL,
   KARTU_ANTRIAN,
+  DAFTAR_PASIEN_LAMA
 };

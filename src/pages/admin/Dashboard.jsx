@@ -2,7 +2,7 @@ import { Container, Card, Row, Col, Button } from "react-bootstrap";
 import AdminLayout from "../../components/AdminLayout";
 import React, {useEffect, useState} from "react";
 import "../../styles/admin.css";
-import { DATA_DOKTER, DATA_POLIKLINIK, DAFTAR_PASIEN_BARU } from "../../router";
+import { DATA_DOKTER, DATA_POLIKLINIK, DAFTAR_PASIEN_BARU, DAFTAR_PASIEN_LAMA } from "../../router";
 import { useNavigate } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 import { RiShieldCrossFill } from "react-icons/ri";
@@ -90,7 +90,7 @@ const refreshToken = async () => {
                   <Button
                     variant="primary"
                     className="btnHome btn1 btn-primary mb-4"
-                    onClick={() => navigate(DAFTAR_PASIEN_BARU)}
+                    onClick={() => navigate(DAFTAR_PASIEN_LAMA)}
                   ><RiShieldCrossFill size="23px" className="ta"/>
                     Pendaftaran pasien lama
                   </Button>

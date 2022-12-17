@@ -16,6 +16,7 @@ import RiwayatPasien from "./pages/admin/RiwayatRekamMedis"
 import DaftarPasienBaru from "./pages/admin/daftarPasienBaru"
 import DaftarBerhasil from "./pages/admin/daftarBerhasil"
 import KartuAntrian from "./pages/admin/KartuAntrian";
+import DaftarPasienLama from "./pages/admin/daftarPasienLama" 
 
 import {
   HOME,
@@ -34,7 +35,8 @@ import {
   RIWAYAT_PASIEN,
   DAFTAR_PASIEN_BARU,
   DAFTAR_BERHASIL,
-  KARTU_ANTRIAN
+  KARTU_ANTRIAN,
+  DAFTAR_PASIEN_LAMA
 } from "./router";
 
 function App() {
@@ -58,6 +60,7 @@ function App() {
         <Route path={DAFTAR_PASIEN_BARU} element={<DaftarPasienBaru/>}/>
         <Route path={DAFTAR_BERHASIL} element={<DaftarBerhasil/>}/>
         <Route path={KARTU_ANTRIAN} element={<KartuAntrian/>}/>
+        <Route path={DAFTAR_PASIEN_LAMA} element={<DaftarPasienLama/>}/>
         <Route path="*" element={<h1>PAGE NOT FOUND</h1>}/>
       </Routes>
     </>
