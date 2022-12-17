@@ -1,4 +1,8 @@
 import { Container, Card, Form, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+
 import Telp from "../assets/images/logo-telp.png";
 import Map from "../assets/images/logo-map.png";
 import Message from "../assets/images/logo-sms.png";
@@ -7,6 +11,24 @@ import deskDok from "../assets/images/deskdok.png";
 import Layout from "../components/Layout";
 
 const HubungiKami = () => {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subjek, setSubjek] = useState("");
+  const [pesan, setPesan] = useState("");
+
+  const saran = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:5100/saran", {
+        name, email, subjek, pesan
+      });
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Layout>
       <div className="hubungi">
@@ -32,37 +54,62 @@ const HubungiKami = () => {
               {/* 1 */}
               <Col xs="5" className="me-5">
                 <h2>Saran</h2>
-                <Form className="form">
+                <Form className="form" onSubmit={saran}>
                   <Form.Group
                     className="mb-3"
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Nama</Form.Label>
-                    <Form.Control type="text" />
+                    <Form.Control 
+                    type="text" 
+                    placeholder="masukkan nama"
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    />
                   </Form.Group>
+
                   <Form.Group
                     className="mb-3"
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" />
+                    <Form.Control 
+                    type="email" 
+                    placeholder="masukkan email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    />
                   </Form.Group>
                   <Form.Group
                     className="mb-3"
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Subjek</Form.Label>
-                    <Form.Control type="text" />
+                    <Form.Control 
+                    type="text" 
+                    placeholder="masukkan subjek"
+                    value={subjek}
+                    onChange={(e) => setSubjek(e.target.value)}
+                    required
+                    />
                   </Form.Group>
+
                   <Form.Group
                     className="mb-3"
                     controlId="exampleForm.ControlTextarea1"
                   >
                     <Form.Label>Pesan</Form.Label>
-                    <Form.Control as="textarea" rows={3} />
+                    <Form.Control 
+                    as="textarea" rows={3} 
+                    placeholder="masukkan pesan anda"
+                    value={pesan}
+                    onChange={(e) => setPesan(e.target.value)}
+                    />
                   </Form.Group>
+                <button class="tombol-kirim" type="submit">SUBMIT</button>
                 </Form>
-                <button class="tombol-kirim">SUBMIT</button>
               </Col>
               {/* 2 */}
               <Col xs="3">
