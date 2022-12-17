@@ -1,10 +1,30 @@
 import { Container, Card, Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import { ADMIN_DASHBOARD } from "../../router";
+import {React, useState, } from "react";
+import axios  from "axios";
+import { useHistory } from "react-router-use-history";
+
 import Logo1 from "../../assets/images/logo1.png";
 
 const Login = () => {
-  const navigate = useNavigate();
+  const [idAdmin, setIdAdmin] = useState("")
+  const [password, setPassword] = useState("")
+  const [msg, setMsg] = useState('');
+  const history = useHistory();
+
+  const Auth = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:5100/login',{
+        idAdmin: idAdmin,
+        password: password
+      });
+      history.push("/dashboard")
+    } catch (error) {
+      if (error.response) {
+          setMsg(error.response.data.msg)
+      }
+    }
+  }
 
   return (
     <>
@@ -14,10 +34,15 @@ const Login = () => {
             <Card.Img variant="top" src={Logo1} />
             <Card.Body>
               <h3 className="log">LOGIN</h3>
-              <Form>
+              <Form onSubmit={ Auth }>
+              <p className="text-center">{msg}</p>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className="hdua">ID</Form.Label>
-                  <Form.Control type="email" placeholder="Masukkan ID kamu" />
+                  <Form.Control type="number" placeholder="Masukkan ID kamu" 
+                  required
+                  value={idAdmin}
+                  onChange={(e)=> setIdAdmin(e.target.value)}
+                  />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -26,16 +51,15 @@ const Login = () => {
                     type="password"
                     placeholder="Masukkan Password"
                     required
+                    value={password}
+                    onChange={(e)=> setPassword(e.target.value)}
                   />
                 </Form.Group>
                 <div className="d-grid gap-2">
-                  <Button
-                    variant="primary"
-                    size="lg"
-                    onClick={() => navigate(ADMIN_DASHBOARD)}
-                  >
-                    MASUK
-                  </Button>
+                  <button
+                    className="mt-4 w-100 btn btn-primary"
+                  >MASUK
+                  </button>
                 </div>
               </Form>
             </Card.Body>
