@@ -28,7 +28,7 @@
 
 .tombol-nav {
   border: none;
-  border-radius: 50px;
+  border-radius: 3px;
   background-color: #4caf50;
   color: white;
   padding: 5px;
@@ -162,6 +162,8 @@ p {
   color: #1f2b6c;
 }
 
+/* LAYANAN */
+
 .Layanan {
   background-color: #a7c6fc;
 }
@@ -231,13 +233,13 @@ footer {
   font-family: "Work Sans", sans-serif;
 }
 
+.logo-footer {
+  border-radius: 20px;
+}
+
 footer h1 {
   font-size: large;
   font-weight: bold;
-}
-
-.list {
-  color: #159eec;
 }
 
 footer p {
@@ -247,12 +249,6 @@ footer p {
 .hubungi {
   height: 220vh;
 }
-
-/* .navbar-list {
-  color: white;
-  text-decoration: none;
-  padding-right: 10px;
-} */
 
 .background-filter {
   background: rgba(255, 255, 255, 0.5);
@@ -265,8 +261,4 @@ footer p {
     #e5e4e8 5%,
     rgba(235, 234, 239, 0) 10%
   );
-}
-
-.tengah {
-  margin: 0 auto;
 }

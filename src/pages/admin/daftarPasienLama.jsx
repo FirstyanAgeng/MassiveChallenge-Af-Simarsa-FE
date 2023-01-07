@@ -7,9 +7,10 @@ import axios from "axios";
 
 import AdminLayout from "../../components/AdminLayout";
 
-const DaftarPasienBaru = () => {
+const DaftarPasienLama = () => {
   const navigate = useNavigate();
   const [nik, setNik] = useState("");
+  const [nrk, setNrk] = useState("");
   const [name, setName] = useState("");
   const [telp, setTelp] = useState("");
   const [jenis_kelamin, setJenis_kelamin] = useState("Pria");
@@ -23,7 +24,7 @@ const DaftarPasienBaru = () => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:5100/pasien", {
-        name, nik, telp, jenis_kelamin, poli, dokter, jadwal, jam, keluhan
+        name, nik, nrk, telp, jenis_kelamin, poli, dokter, jadwal, jam, keluhan
       });
       navigate("/daftar-berhasil");
     } catch (error) {
@@ -33,7 +34,7 @@ const DaftarPasienBaru = () => {
 
   return (
     <AdminLayout>
-      <div className="daftarPasienBaru">
+      <div className="daftarPasienLama">
         <Container>
           <Row>
             <Navbar bg="light" expand="lg">
@@ -77,6 +78,20 @@ const DaftarPasienBaru = () => {
                           />
                           <Form.Text style={{ color: "black" }}>
                             *NIK harus 16 Digit
+                          </Form.Text>
+                        </Form.Group>
+
+                        <Form.Group className="mb-4" controlId="formBasicEmail">
+                          <Form.Label className="bold">No. Rekam Medis</Form.Label>
+                          <Form.Control
+                          type="number" 
+                          placeholder="Masukan No. Rekam Medis"
+                          value={nrk}
+                          onChange={(e) => setNrk(e.target.value)}
+                          required
+                          />
+                          <Form.Text style={{ color: "black" }}>
+                            *Nomor Rekam Medis harus 13 digit
                           </Form.Text>
                         </Form.Group>
 
@@ -232,4 +247,4 @@ const DaftarPasienBaru = () => {
   );
 };
 
-export default DaftarPasienBaru;
+export default DaftarPasienLama;

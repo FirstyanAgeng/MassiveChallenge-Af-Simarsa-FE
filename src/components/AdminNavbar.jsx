@@ -1,23 +1,22 @@
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { useHistory } from "react-router-use-history";
 import jwt_decode from "jwt-decode";
 
-// import { HOME} from "../router";
+import { HOME} from "../router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/style.css";
 import "../styles/admin.css"
 import "../pages/Beranda";
-// import { HOME } from "../router";
 import { IoLogOutOutline } from "react-icons/io5";
 
 
 
 const AdminNavbar = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [token, setToken] = useState('');
   const [expire, setExpire] = useState('');

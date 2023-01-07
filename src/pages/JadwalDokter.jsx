@@ -1,12 +1,13 @@
-import { Card, Container, Row, Col } from "react-bootstrap";
-import deskDok from "../assets/images/deskdok.png";
-import Dok from "../assets/images/dok1.png";
-import Layout from "../components/Layout";
 import dokter1 from "../assets/images/dokter1.png";
 import dokter2 from "../assets/images/dokter2.png";
 import dokter3 from "../assets/images/dokter3.png";
 import dokter4 from "../assets/images/dokter4.png";
 import dokter5 from "../assets/images/dokter5.png";
+import deskDok from "../assets/images/deskdok.png";
+import Dok from "../assets/images/dok1.png";
+import { Card, Container, Row, Col } from "react-bootstrap";
+import Layout from "../components/Layout";
+
 const JadwalDokter = () => {
   return (
     <Layout>

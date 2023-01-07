@@ -1,7 +1,7 @@
 import { Card, Container, Row, Col } from "react-bootstrap";
-import Rs from "../assets/images/rs.png";
-import logoRs from "../assets/images/logoRs.png";
 import Layout from "../components/Layout";
+import logoRs from "../assets/images/logoRs.png";
+import Rs from "../assets/images/rs.png";
 
 const TentangKami = () => {
   return (

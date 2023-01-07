@@ -1,3 +1,9 @@
+/* font poppins */
+@font-face{
+  font-family: "poppins";
+  src: url('../../font/Poppins-Medium.ttf');
+}
+
 /* menu login */
 .login {
     background: url(../assets/images/bg2.png);
@@ -10,7 +16,7 @@
     text-align: center;
     color: #0957DE;
     font-size: 35px;
-    font-family: url(../../font/Poppins-Bold.ttf);
+    font-family: poppins;
     padding-bottom: 10px;
 }
 
@@ -19,6 +25,7 @@
   color: white;
   font-weight: bold;
   font-size: 1.5em;
+  margin-left: 20px;
 }
 .hsatu{
   display: inline;
@@ -33,12 +40,14 @@
 }
 
 .titleHome{
-  font-size: 2.3vw;
+  font-size: 2.2vw;
   font-weight: 500;
   color: #0957DE;
   text-shadow: 1px 3px 3px rgba(124, 124, 124, 0.5);
-  margin: 10px;
+  margin-top: 10px;
+  margin-left: 22px;
   width: 650px;
+  font-family: poppins;
 }
 
 .date{
@@ -48,19 +57,26 @@
   font-weight: 500;
   margin-right: 10px;
   text-align: right;
+  font-family: poppins;
 }
 
 .cont{
-    width: 1000px;
-    margin-top: 30px;
+    width: 1100px;
+    margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 50px;
   }
 
+.pendaftaran{
+  padding: 10px 40px;
+}
 
 .card-title{
   font-weight: bold;
-  font-size: 1.5vw;
+  font-size: 2vw;
+  font-family: poppins;
+  color: black;
+  margin-bottom: 20px;
 }
 .card-text{
   font-weight: bold;
@@ -69,7 +85,7 @@
 .btnHome{
   background-color: #0957DE;
   margin: auto;
-  width: 70%;
+  width: 100%;
   height: auto;
   font-size: 1.2vw;
   font-weight: bold;
@@ -80,11 +96,16 @@
   background-color: white;
   color: #0957DE;
 }
+
+.text-btn{
+  font-size: 20px;
+}
+
 .btn1{
   background-color: rgb(0, 202, 202);
   border-color: rgb(0, 202, 202);
   margin: auto;
-  width: 70%;
+  width: 100%;
   height: auto;
   font-size: 1.2vw;
   font-weight: bold;
@@ -97,6 +118,15 @@
   color: rgb(0, 202, 202);
 }
 
+.datapol-dok{
+  margin-left: 30px;
+}
+
+.data-poliklinik{
+  height: 260px;
+  padding: 10px;
+}
+
 .pageHome{
     background-color: whitesmoke;
     height: auto;
@@ -105,10 +135,20 @@
   max-height: 500px;
 }
 
+.card-datapoli{
+  padding: auto;
+}
+
 .center{
-  padding-top: 60px;;
+  padding-top: 60px;
   text-align: center;
 }
+
+.font-datapoli{
+  font-family: poppins;
+  font-size: 23px;
+}
+
 
 .nv{
   display: inline-block;
@@ -418,7 +458,7 @@
       stroke-dashoffset: 0;
   }
 }
-@keyFrames fill {
+@keyframes fill {
   from {
       fill: transparent;
       border-radius: 50%;

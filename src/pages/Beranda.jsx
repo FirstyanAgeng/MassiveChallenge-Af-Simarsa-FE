@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
-import Layanan1 from "../assets/images/layanan1.png";
-import Dok from "../assets/images/dok1.png";
 import { Row, Col, Container, Card } from "react-bootstrap";
+import { DOKTER, ABOUT } from "../router";
+import { Link } from "react-router-dom";
+import Layanan1 from "../assets/images/layanan1.png";
+import Arrow from "../assets/images/arrow.png";
+import Dok from "../assets/images/dok1.png";
 import Layout from "../components/Layout";
 
 const Beranda = () => {
@@ -25,7 +27,14 @@ const Beranda = () => {
             Koentoro)
           </p>
           <p>
-            <a href="/tentang">Baca Selengkapnya</a>
+            <Link to={ABOUT}>
+              Baca Selengkapnya
+              <img
+                src={Arrow}
+                alt=""
+                style={{ width: "10px", height: "10px" }}
+              />
+            </Link>
           </p>
         </Container>
       </div>
@@ -52,7 +61,7 @@ const Beranda = () => {
       <div className="beranda-jadwal pb-5">
         <Container>
           <h2 className="pt-5 text-center">Jadwal Dokter</h2>
-          <Row className="justify-content-center tengah mt-5">
+          <Row className="justify-content-center mt-5">
             <Card style={{ width: "17rem" }} className="isi-kartu me-5">
               <Card.Img variant="top" src={Dok} />
               <Card.Body>
@@ -60,23 +69,45 @@ const Beranda = () => {
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
+
+                <Link to={DOKTER}>
+                  Lihat Jadwal Praktik
+                  <img
+                    src={Arrow}
+                    alt=""
+                    style={{ width: "10px", height: "10px" }}
+                  />
+                </Link>
               </Card.Body>
             </Card>
 
-            <Card style={{ width: "17rem" }} className="isi-kartu ms-5">
+            <Card style={{ width: "18rem" }} className="isi-kartu ms-5">
               <Card.Img variant="top" src={Dok} />
               <Card.Body>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
+                <div className="">
+                  <Link to={DOKTER}>
+                    Lihat Jadwal Praktik
+                    <img
+                      src={Arrow}
+                      alt=""
+                      style={{ width: "10px", height: "10px" }}
+                    />
+                  </Link>
+                </div>
               </Card.Body>
             </Card>
-            <a href="/tentang" className="text-center mt-3">
-              Baca Selengkapnya
-            </a>
+            <Link to={DOKTER} className="text-center mt-3">
+              Selengkapnya
+              <img
+                src={Arrow}
+                alt=""
+                style={{ width: "10px", height: "10px" }}
+              />
+            </Link>
           </Row>
         </Container>
       </div>

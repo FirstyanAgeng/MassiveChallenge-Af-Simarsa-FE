@@ -2,7 +2,7 @@ import { Container, Card, Row, Col, Button } from "react-bootstrap";
 import AdminLayout from "../../components/AdminLayout";
 import React, {useEffect, useState} from "react";
 import "../../styles/admin.css";
-import { DATA_DOKTER, DATA_POLIKLINIK, DAFTAR_PASIEN_BARU } from "../../router";
+import { DATA_DOKTER, DATA_POLIKLINIK, DAFTAR_PASIEN_BARU, DAFTAR_PASIEN_LAMA } from "../../router";
 import { useNavigate } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 import { RiShieldCrossFill } from "react-icons/ri";
@@ -65,41 +65,51 @@ const refreshToken = async () => {
       <div className="adminHome">
         <Container className="head mt-3">
           <Row>
-            <Col>
-              <h1 className="titleHome title">Selamat Datang, {name}!</h1>
-            </Col>
-            <Col>
-              <p className="date fw-bold">{arrDay[day]}, {moment(dateTime).format('DD/MM:YYYY: HH:mm')} </p>
-            </Col>
+            <div className="col-md-6">
+              <h1 className="titleHome">Selamat Datang {name}!</h1>
+            </div>
+            <div className="col-md-6">
+              <p className="date">{arrDay[day]}, {moment(dateTime).format('DD/MM/YYYY HH:mm')} </p>
+            </div>
           </Row>
         </Container>
 
         <Container className="cont">
           <Row>
-            <Col>
-              <Card>
+            <div className="col-md-6">
+              <Card className="pendaftaran">
                 <Card.Body>
-                  <Card.Title className="card-title">
-                    PENDAFTARAN PASIEN
+                  <Card.Title>
+                    <h2 className="card-title">PENDAFTARAN PASIEN</h2>
                   </Card.Title>
                   <Card.Img variant="top" src={Pana} />
-                  <Card.Text>Saat ini, {arrDay[day]}, {moment(dateTime).format('DD/MM:YYYY: HH:mm')}</Card.Text>
-                  <Button variant="primary" className="btnHome btn y mb-3" onClick={() => navigate(DAFTAR_PASIEN_BARU)}>
-                    <FaPlus size="20px" className="ta" />Pendaftaran pasien baru
+                  <Card.Text >
+                    <p className="date-1">
+                    Saat ini, {arrDay[day]}, {moment(dateTime).format('DD/MM/YYYY HH:mm')}
+                    </p>
+                    </Card.Text>
+                    
+                  <Button className="btnHome mb-3" onClick={() => navigate(DAFTAR_PASIEN_BARU)}>
+                    <div className="text-btn">
+                    <FaPlus size="22px" className="ta" />
+                    Pendaftaran pasien baru
+                    </div>
                   </Button>
                   <Button
-                    variant="primary"
-                    className="btnHome btn1 btn-primary mb-4"
-                    onClick={() => navigate(DAFTAR_PASIEN_BARU)}
-                  ><RiShieldCrossFill size="23px" className="ta"/>
+                    className="btn1 mb-4"
+                    onClick={() => navigate(DAFTAR_PASIEN_LAMA)}
+                  ><div className="text-btn">
+                    <RiShieldCrossFill size="23px" className="ta"/>
                     Pendaftaran pasien lama
+                  </div>
                   </Button>
                 </Card.Body>
               </Card>
-            </Col>
+            </div>
 
-            <Col>
-              <Card className="mb-4">
+            <Col className="datapol-dok">
+            <Row>
+              <Card className="data-poliklinik mb-4">
                 <Container>
                   <Row>
                     <Col>
@@ -107,9 +117,10 @@ const refreshToken = async () => {
                         <Card.Img src={Data} />
                       </Card.Body>
                     </Col>
+
                     <Col>
                       <Card.Body className="center">
-                        <Card.Title>DATA POLIKLINIK</Card.Title>
+                        <Card.Title className="font-datapoli">DATA POLIKLINIK</Card.Title>
                         <Button
                           variant="primary"
                           className="btnHome mb-4"
@@ -122,9 +133,10 @@ const refreshToken = async () => {
                   </Row>
                 </Container>
               </Card>
+            </Row>
 
-              <Col>
-                <Card>
+            <Row>
+                <Card className="data-poliklinik mt-4">
                   <Container>
                     <Row>
                       <Col>
@@ -134,7 +146,7 @@ const refreshToken = async () => {
                       </Col>
                       <Col>
                         <Card.Body className="center">
-                          <Card.Title>DATA DOKTER</Card.Title>
+                          <Card.Title className="font-datapoli">DATA DOKTER</Card.Title>
                           <Button
                             variant="primary"
                             className="btnHome btn btn-primary mb-4 text-center"
@@ -147,7 +159,7 @@ const refreshToken = async () => {
                     </Row>
                   </Container>
                 </Card>
-              </Col>
+            </Row>
             </Col>
           </Row>
         </Container>

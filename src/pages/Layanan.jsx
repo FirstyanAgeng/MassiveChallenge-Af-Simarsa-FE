@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
 import deskfas from "../assets/images/fasilitas.png";
-import { Card, Container, Row, Col } from "react-bootstrap";
 import Layanan1 from "../assets/images/layanan1.png";
 import Layanan2 from "../assets/images/layanan2.png";
 import Layanan3 from "../assets/images/layanan3.png";
 import Layanan4 from "../assets/images/layanan4.png";
 import Layanan5 from "../assets/images/layanan5.png";
 import Layout from "../components/Layout";
+import { Card, Container, Row, Col } from "react-bootstrap";
 
 const Layanan = () => {
   return (
