@@ -15,33 +15,47 @@ const TentangKami = () => {
             </Container>
           </Card.ImgOverlay>
         </Card>
-        <Container className="my-5 tentang-content h-80 p-2">
-          <Row className="my-5 mx-2">
-            <Col xs="5">
-              <img src={logoRs} alt="logo" className="logoRs" />
-            </Col>
-            <Col xs="7">
-              <h3>SELAMAT DATANG DI RUMAH SAKIT BUNDA PURWOKERTO</h3>
-              <h2 className="deskripsi">
-                Sejarah Rumah Sakit Bunda Purwokerto
-              </h2>
-              <p>
-                Rumah Sakit Bunda Purwokerto merupakan Rumah sakit swasta di
-                bawah naungan Yayasan Bunda Purwokerto. Di bangun sejak 09
-                Agustus 1989 dan beroperasi sebagai Rumah Bersalin pada 14 juni
-                1990 yang diresmikan oleh Bapak Kepala Kandep Kesehatan Banyumas
-                (Bapak dr. Koentoro)
-              </p>
-              <p>
-                Seiring berjalannya waktu RB tersebut terus berkembang dengan
-                meningkatnya statsu RB tersebut kearah yang lebih besar. Pada
-                tanggal 1 September 1991 status Rumah Bersalin “BUNDA” berubah
-                dan meningkat menjadi Rumah Sakit Khusus Ibu dan Anak “BUNDA”
-                yang operasioanalnya membawahi persalinan.
-              </p>
-            </Col>
-          </Row>
-        </Container>
+        <div className="my-5 tentang-content h-80 p-2 mx-5 ">
+          <Container>
+            <Row className="my-5 mx-2">
+              <Col xs="5">
+                <img src={logoRs} alt="logo" className="logoRs" />
+              </Col>
+              <Col xs="6">
+                <h3 className="text-center">
+                  SELAMAT DATANG DI RUMAH SAKIT BUNDA PURWOKERTO
+                </h3>
+                <h2 className="deskripsi text-center">
+                  Sejarah Rumah Sakit Bunda Purwokerto
+                </h2>
+                <p>
+                  Rumah Sakit Bunda Purwokerto merupakan Rumah sakit swasta di
+                  bawah naungan Yayasan Bunda Purwokerto. Di bangun sejak 09
+                  Agustus 1989 dan beroperasi sebagai Rumah Bersalin pada 14
+                  juni 1990 yang diresmikan oleh Bapak Kepala Kandep Kesehatan
+                  Banyumas (Bapak dr. Koentoro)
+                </p>
+                <p>
+                  Seiring berjalannya waktu RB tersebut terus berkembang dengan
+                  meningkatnya statsu RB tersebut kearah yang lebih besar. Pada
+                  tanggal 1 September 1991 status Rumah Bersalin “BUNDA” berubah
+                  dan meningkat menjadi Rumah Sakit Khusus Ibu dan Anak “BUNDA”
+                  yang operasioanalnya membawahi persalinan.
+                </p>
+                <p>
+                  Saat ini Rumah sakit Bunda Purwokerto memiliki lahan seluas
+                  4.396 m² dengan luas bangunan 3.920 m², dan telah ditetapkan
+                  sebagai Rumah Sakit Umum / RSU Tipe D.Untuk kesiapan mutu dan
+                  layanan yang baik, rs tersebut telah melakukan akreditasi
+                  pertamanya pada 31 mei 1999 dan saat ini telah melampaui tahap
+                  ketiga akreditasi dari Komisi Akreditasi Rumah Sakit (KARS)
+                  untuk versi 2012 dengan hasil lulus tingkat Madya pada 13
+                  September 2017 lalu
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </div>
     </Layout>
   );

@@ -5,8 +5,8 @@ import { KARTU_ANTRIAN } from "../../router";
 const DaftarBerhasil = () => {
   const navigate = useNavigate();
   return (
-    <div className="daftarBerhasil alldb">
-      <Container className="cont2 fade-in">
+    <div className="daftarBerhasil">
+      <Container className="cont2">
         <Card className="cd2 text-center">
           <Card.Body>
             <Card.Title className="mt-4 ct2">

@@ -57,7 +57,7 @@ const DataPoliklinik = () => {
                           </Col>
                           <Col className="mt-3 text-center mt-3">
                             <button
-                              class="btnDataDokter btn btnpad"
+                              className="btnDataDokter"
                               onClick={() => navigate(DATA_POLI)}
                             >
                               Lihat data
@@ -81,7 +81,7 @@ const DataPoliklinik = () => {
                           </Col>
                           <Col className="mt-3 text-center mt-4">
                             <button
-                              class="btnDataDokter btn btnpad"
+                              className="btnDataDokter"
                               onClick={() => navigate(DATA_POLI)}
                             >
                               Lihat data
@@ -106,7 +106,7 @@ const DataPoliklinik = () => {
                           </Col>
                           <Col className="mt-3 text-center mt-4">
                             <button
-                              class="btnDataDokter btn btnpad "
+                              class="btnDataDokter "
                               onClick={() => navigate(DATA_POLI)}
                             >
                               Lihat data
@@ -130,7 +130,7 @@ const DataPoliklinik = () => {
                           </Col>
                           <Col className="mt-3 text-center mt-4">
                             <button
-                              class="btnDataDokter btn btnpad"
+                              class="btnDataDokter"
                               onClick={() => navigate(DATA_POLI)}
                             >
                               Lihat data
@@ -156,7 +156,7 @@ const DataPoliklinik = () => {
                           </Col>
                           <Col className="mt-3 text-center mt-4">
                             <button
-                              class="btnDataDokter btnpad btn"
+                              class="btnDataDokter"
                               onClick={() => navigate(DATA_POLI)}
                             >
                               Lihat data
@@ -180,7 +180,7 @@ const DataPoliklinik = () => {
                           </Col>
                           <Col className="mt-3 text-center mt-4">
                             <button
-                              class="btnDataDokter btn btnpad"
+                              class="btnDataDokter"
                               onClick={() => navigate(DATA_POLI)}
                             >
                               Lihat data
@@ -205,7 +205,7 @@ const DataPoliklinik = () => {
                           </Col>
                           <Col className="mt-3 text-center mt-4">
                             <button
-                              class="btnDataDokter btnpad btn"
+                              class="btnDataDokter"
                               onClick={() => navigate(DATA_POLI)}
                             >
                               Lihat data
@@ -229,7 +229,7 @@ const DataPoliklinik = () => {
                           </Col>
                           <Col className="mt-3 text-center mt-4">
                             <button
-                              class="btnDataDokter btn btnpad"
+                              class="btnDataDokter"
                               onClick={() => navigate(DATA_POLI)}
                             >
                               Lihat data
@@ -254,7 +254,7 @@ const DataPoliklinik = () => {
                           </Col>
                           <Col className="mt-3 text-center mt-4">
                             <button
-                              class="btnDataDokter btn btnpad"
+                              class="btnDataDokter"
                               onClick={() => navigate(DATA_POLI)}
                             >
                               Lihat data

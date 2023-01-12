@@ -38,22 +38,31 @@ const Beranda = () => {
           </p>
         </Container>
       </div>
-      <div className="beranda-layanan container my-5 h-50">
-        <h2 className="text-center p-5">Layanan</h2>
+      <div className="beranda-layanan container mb-5 pb-5">
+        <h2 className="text-center p-5 judul">Layanan</h2>
         <Container>
-          <Row className="container">
-            <Col>
+          <Row className="container my-5">
+            <Col xs="7">
               <h3>Layanan Unggulan Kandungan</h3>
-              <p>USG Obsetri Ginekologi</p>
-              <p>USG Skrining Kelainan Kongenital Janin dan Detail Jantung</p>
-              <p>USG 4 Dimensi HD Live Studio</p>
-              <p>Penanganan Kehamilan Resiko Tinggi</p>
-              <p className="pb-5">
-                <a href="/layanan">Baca Selengkapnya</a>
-              </p>
+              <ul className="list pt-3">
+                <li>
+                  <p>USG Obsetri Ginekologi</p>
+                </li>
+                <li>
+                  <p>
+                    USG Skrining Kelainan Kongenital Janin dan Detail Jantung
+                  </p>
+                </li>
+                <li>
+                  <p>USG 4 Dimensi HD Live Studio</p>
+                </li>
+                <li>
+                  <p>Penanganan Kehamilan Resiko Tinggi</p>
+                </li>
+              </ul>
             </Col>
-            <Col>
-              <img src={Layanan1} width="400px" height="220px" />
+            <Col xs="5">
+              <img src={Layanan1} style={{ width: "400px", height: "220px" }} />
             </Col>
           </Row>
         </Container>

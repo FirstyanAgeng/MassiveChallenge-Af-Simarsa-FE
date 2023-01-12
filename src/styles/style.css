@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap");
 :root {
   --primary-color: #0957de;
@@ -8,6 +9,7 @@
   --txt-primary-color: #159eec;
   --txt-secondary-color: #1f2b6c;
   --txt-tertiary-color: #fcfefe;
+  --btn-primary-color: #4caf50;
 }
 
 * {
@@ -29,7 +31,7 @@
 .tombol-nav {
   border: none;
   border-radius: 3px;
-  background-color: #4caf50;
+  background-color: var(--btn-primary-color);
   color: white;
   padding: 5px;
   font-size: 15px;
@@ -38,7 +40,7 @@
 
 .tombol-nav:hover {
   background-color: white;
-  color: #4caf50;
+  color: var(--btn-primary-color);
   transition: 0.3s ease;
 }
 
@@ -57,7 +59,7 @@
   text-align: center;
   align-items: center;
   margin-top: 5rem;
-  font-family: "Yeseva One", cursive;
+  font-family: "Roboto", sans-serif;
   background-color: var(--secondary-color);
   margin-bottom: 30px;
 }
@@ -78,13 +80,13 @@
 
 h1 {
   color: var(--primary-color);
-  font-family: "Yeseva One", cursive;
+  font-family: "Roboto", sans-serif;
   font-size: 48px;
 }
 
 h2 {
   color: var(--primary-color);
-  font-family: "Yeseva One", cursive;
+  font-family: "Roboto", sans-serif;
   font-size: 32px;
 }
 
@@ -96,16 +98,16 @@ h3 {
 }
 
 p {
-  font-family: "Work Sans", sans-serif;
-  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 .judul {
   padding-top: 250px;
   color: var(--primary-color);
-  font-family: "Yeseva One", cursive;
+  font-family: "Roboto", sans-serif;
   font-size: 48px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .deskripsi {
@@ -138,14 +140,16 @@ p {
 .tentang-content {
   background-color: var(--secondary-color);
 }
+
 .tentangKami {
-  height: 130vh;
+  height: 145vh;
   margin-bottom: 10rem;
 }
 
 .logoRs {
-  width: 450px;
-  height: 450px;
+  width: 408px;
+  height: 541px;
+  margin-top: 40px;
 }
 
 .fasilitas {
@@ -162,6 +166,11 @@ p {
   color: #1f2b6c;
 }
 
+.isi-kartu2 {
+  background-color: #ffffff;
+  color: #000000;
+}
+
 /* LAYANAN */
 
 .Layanan {
@@ -172,6 +181,18 @@ p {
   background-color: #ecf5f8;
 }
 
+.list {
+  list-style-image: url(../assets/images/icon-layanan.png);
+}
+
+/* KARIR */
+.Karir {
+  background-color: #a7c6fc;
+}
+
+.kartu-Karir {
+  background-color: #ecf5f8;
+}
 /* hubungi kami */
 .card-kami {
   background-color: var(--primary-color);
@@ -224,6 +245,12 @@ p {
 .logo-layanan {
   width: 40px;
   height: 40px;
+}
+
+/* artikel */
+.artikel {
+  height: 210vh;
+  background-color: #fcfefe;
 }
 
 /* Footer */

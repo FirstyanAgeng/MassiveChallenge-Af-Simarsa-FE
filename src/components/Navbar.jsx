@@ -15,6 +15,8 @@ import {
   LAYANAN,
   HOME,
   HUBUNGI,
+  KARIR,
+  ARTIKEL,
 } from "../router";
 
 const NavigasiBar = () => {
@@ -66,6 +68,12 @@ const NavigasiBar = () => {
               </NavLink>
               <NavLink className="nav-link" to={HUBUNGI}>
                 Hubungi Kami
+              </NavLink>
+              <NavLink className="nav-link" to={KARIR}>
+                Karir
+              </NavLink>
+              <NavLink className="nav-link" to={ARTIKEL}>
+                Artikel
               </NavLink>
             </Nav>
             <button className="tombol-nav" onClick={() => navigate(LOGIN)}>

@@ -5,6 +5,7 @@ import Layanan2 from "../assets/images/layanan2.png";
 import Layanan3 from "../assets/images/layanan3.png";
 import Layanan4 from "../assets/images/layanan4.png";
 import Layanan5 from "../assets/images/layanan5.png";
+import iconLayanan from "../assets/images/icon-layanan.png";
 import Layout from "../components/Layout";
 import { Card, Container, Row, Col } from "react-bootstrap";
 
@@ -16,16 +17,16 @@ const Layanan = () => {
           <Card.Img src={deskfas} alt="Card image" />
           <Card.ImgOverlay className="background-filter">
             <Container>
-              <h1>Layanan Kami</h1>
+              <h1>Layanan </h1>
             </Container>
           </Card.ImgOverlay>
         </Card>
         <Container>
           <div className="p-5 layanan-content">
-            <Row className="container mb-5 kartu-layanan py-5">
-              <Col xs="6">
+            <Row className="container mb-5 kartu-layanan py-3">
+              <Col xs="7">
                 <h3>Layanan Unggulan Kandungan</h3>
-                <ul className="list">
+                <ul className="list pt-3">
                   <li>
                     <p>USG Obsetri Ginekologi</p>
                   </li>
@@ -42,17 +43,17 @@ const Layanan = () => {
                   </li>
                 </ul>
               </Col>
-              <Col xs="6">
+              <Col xs="5">
                 <img
                   src={Layanan1}
                   style={{ width: "400px", height: "220px" }}
                 />
               </Col>
             </Row>
-            <Row className="container mb-5 kartu-layanan py-5">
-              <Col xs="6">
+            <Row className="container mb-5 kartu-layanan py-3">
+              <Col xs="7">
                 <h3>Layanan Unggulan Saraf</h3>
-                <ul className="list">
+                <ul className="list pt-3">
                   <li>
                     <p>Nyeri Kepala</p>
                   </li>
@@ -67,14 +68,14 @@ const Layanan = () => {
                   </li>
                 </ul>
               </Col>
-              <Col xs="6">
+              <Col xs="5">
                 <img src={Layanan2} width="400px" height="220px" />
               </Col>
             </Row>
-            <Row className="container mb-5 kartu-layanan py-5">
-              <Col xs="6">
+            <Row className="container mb-5 kartu-layanan py-3">
+              <Col xs="7">
                 <h3>Layanan Unggulan Anak</h3>
-                <ul className="list">
+                <ul className="list pt-3">
                   <li>
                     <p>Pelayanan Bayi dan Anak</p>
                   </li>
@@ -91,14 +92,14 @@ const Layanan = () => {
                   </li>
                 </ul>
               </Col>
-              <Col xs="6">
+              <Col xs="5">
                 <img src={Layanan3} width="397.94px" height="219.6px" />
               </Col>
             </Row>
-            <Row className="container mb-5 kartu-layanan py-5">
-              <Col xs="6">
+            <Row className="container mb-5 kartu-layanan py-3">
+              <Col xs="7">
                 <h3>Layanan Unggulan Penyakit Dalam</h3>
-                <ul className="list">
+                <ul className="list pt-3">
                   <li>
                     <p>Penyakit Lambung</p>
                   </li>
@@ -113,14 +114,14 @@ const Layanan = () => {
                   </li>
                 </ul>
               </Col>
-              <Col xs="6">
+              <Col xs="5">
                 <img src={Layanan4} width="400px" height="220px" />
               </Col>
             </Row>
-            <Row className="container mb-5 kartu-layanan py-5">
-              <Col xs="6">
+            <Row className="container mb-5 kartu-layanan py-3">
+              <Col xs="7">
                 <h3>Layanan Unggulan Paru</h3>
-                <ul className="list">
+                <ul className="list pt-3">
                   <li>
                     <p>Penyakit TBC</p>
                   </li>
@@ -132,7 +133,7 @@ const Layanan = () => {
                   </li>
                 </ul>
               </Col>
-              <Col xs="6">
+              <Col xs="5">
                 <img src={Layanan5} width="400px" height="220px" />
               </Col>
             </Row>
