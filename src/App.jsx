@@ -17,6 +17,9 @@ import DaftarPasienBaru from "./pages/admin/daftarPasienBaru"
 import DaftarBerhasil from "./pages/admin/daftarBerhasil"
 import KartuAntrian from "./pages/admin/KartuAntrian";
 import DaftarPasienLama from "./pages/admin/daftarPasienLama" 
+import EditDetailDokter from "./pages/admin/EditDetailDokter";
+import EditDataPasien from "./pages/admin/EditDataPasien"
+import EditRiwayat from "./pages/admin/EditRiwayat"
 
 import {
   HOME,
@@ -37,7 +40,9 @@ import {
   DAFTAR_BERHASIL,
   KARTU_ANTRIAN,
   DAFTAR_PASIEN_LAMA,
-  dash,
+  EDIT_DETAIL_DOKTER,
+  EDIT_DATA_PASIEN,
+  EDIT_RIWAYAT
 } from "./router";
 
 function App() {
@@ -54,10 +59,13 @@ function App() {
         <Route path={LOGIN} element={<Login />} />
         <Route path={DATA_DOKTER} element={<DataDokter />} />
         <Route path={DETAIL_DOKTER} element={<DetailDokter />} />
+        <Route path={EDIT_DETAIL_DOKTER} element={<EditDetailDokter />} />
         <Route path={DATA_POLIKLINIK} element={<DataPoliklinik />} />
         <Route path={DATA_POLI} element={<DataPoli />} />
         <Route path={DATA_PASIEN} element={<DataPasien/>}/>
+        <Route path={EDIT_DATA_PASIEN} element={<EditDataPasien/>}/>
         <Route path={RIWAYAT_PASIEN} element={<RiwayatPasien/>}/>
+        <Route path={EDIT_RIWAYAT} element={<EditRiwayat/>}/>
         <Route path={DAFTAR_PASIEN_BARU} element={<DaftarPasienBaru/>}/>
         <Route path={DAFTAR_BERHASIL} element={<DaftarBerhasil/>}/>
         <Route path={KARTU_ANTRIAN} element={<KartuAntrian/>}/>

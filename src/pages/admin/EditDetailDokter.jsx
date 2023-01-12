@@ -1,5 +1,5 @@
 import { Container, Card, Row, Col, Button, Nav, Form, Tab, Tabs, Navbar } from "react-bootstrap";
-import { ADMIN_DASHBOARD,  DATA_DOKTER, EDIT_DETAIL_DOKTER} from "../../router";
+import { ADMIN_DASHBOARD,  DATA_DOKTER, DETAIL_DOKTER} from "../../router";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -10,21 +10,51 @@ import "../../styles/admin.css";
 import Ava from "../../assets/images/Ava.png";
 
 
-const DetailDokter = () =>{
+const EditDetailDokter = () =>{
     const navigate = useNavigate();
-    const [dokter, setDokter] = useState([]);
+
+    const [dokter, setDokter] = useState({
+      name: "",
+      no_izin_praktik: "",
+      alamat:"",
+      ttl: "",
+      agama: ""
+    });
+
+    function handleChange(e) {
+      let newFormState = { ...dokter };
+      newFormState[e.target.name] = e.target.value;
+      setDokter(newFormState);
+    }
 
     useEffect(() => {
         getDataDokterById();
       }, []);
+
     const getDataDokterById = async () => {
         const response = await axios.get("http://localhost:5100/dokter/8");
         setDokter(response.data);
       };
+
+      const updateDokter = async (e) => {
+        e.preventDefault();
+        try {
+          await axios.patch("http://localhost:5100/dokter/8", {
+            name: dokter.name,
+            no_izin_praktik: dokter.no_izin_praktik,
+            alamat: dokter.alamat,
+            ttl: dokter.ttl,
+            agama: dokter.agama
+          });
+          navigate(DETAIL_DOKTER);
+        } catch (error) {
+          console.log(error);
+        }
+      };
       
     return (
         <AdminLayout>
-            <div className="detailDokter">
+            <div className="EditdetailDokter">
             <Container className="container2 container mb-4">
         <Row>
         <Navbar bg="light" expand="lg">
@@ -69,59 +99,79 @@ const DetailDokter = () =>{
                         <Col sm={6}>
                         <Tabs defaultActiveKey="profile-dokter" className="mb-3 tabq" justify>
                         <Tab eventKey="profile-dokter" title="Profile Dokter">
+                        
+                        <Form onSubmit={updateDokter}>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">Nama Dokter</Form.Label>
-                        <Form.Control value={dokter.name} disabled />
+                        <Form.Control value={dokter.name}  
+                                      onChange={handleChange}
+                                      name="name"
+                        // onChange = {(e) => setName(e.target.value)}
+                        />
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">No. Izin Praktek</Form.Label>
-                        <Form.Control value={dokter.no_izin_praktik} disabled />
+                        <Form.Control value={dokter.no_izin_praktik}  
+                        onChange={handleChange}
+                        name="no_izin_praktik"
+                        // onChange = {(e) => setNo_izin_praktik(e.target.value)}
+                        />
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">Alamat</Form.Label>
-                        <Form.Control value={dokter.alamat} disabled />
+                        <Form.Control value={dokter.alamat} 
+                        onChange={handleChange}
+                        name="alamat" 
+                        // onChange = {(e) => setAlamat(e.target.value)}
+                        />
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">Tempat, Tanggal Lahir</Form.Label>
-                        <Form.Control value={dokter.ttl} disabled />
+                        <Form.Control value={dokter.ttl}
+                        onChange={handleChange}
+                        name="ttl"  
+                        // onChange = {(e) => setTtl(e.target.value)}
+                        />
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">Agama</Form.Label>
-                        <Form.Control value={dokter.agama} disabled />
+                        <Form.Control value={dokter.agama}  
+                        onChange={handleChange}
+                        name="agama"
+                        // onChange = {(e) => setAgama(e.target.value)}
+                        />
                         </Form.Group>
                         <Button className="km2"
-                        onClick={() => navigate(EDIT_DETAIL_DOKTER)}
-                        >Edit</Button>
-
+                        type="submit"
+                        >Simpan</Button>
+                        </Form>
                         </Tab>
-
-
 
 
                         <Tab eventKey="jadwal-praktik" title="Jadwal Praktik">
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">Senin</Form.Label>
-                        <Form.Control value="08.00 - 11.00" disabled />
+                        <Form.Control placeholder="08.00 - 11.00"  />
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">Selasa</Form.Label>
-                        <Form.Control value="08.00 - 11.00" disabled />
+                        <Form.Control placeholder="08.00 - 11.00"  />
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">Rabu</Form.Label>
-                        <Form.Control value="08.00 - 11.00" disabled />
+                        <Form.Control placeholder="08.00 - 11.00"  />
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">Kamis</Form.Label>
-                        <Form.Control value="08.00 - 11.00" disabled />
+                        <Form.Control placeholder="08.00 - 11.00"  />
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">Jumat</Form.Label>
-                        <Form.Control value="09.00 - 11.00" disabled />
+                        <Form.Control placeholder="09.00 - 11.00"  />
                         </Form.Group>
                         <Button className="km2" 
-                        onClick={() => navigate(EDIT_DETAIL_DOKTER)}
-                        >Edit</Button>
+                        type="submit"
+                        >Simpan</Button>
                         </Tab>
                         
                         </Tabs>
@@ -140,4 +190,4 @@ const DetailDokter = () =>{
     );
 };
 
-export default DetailDokter;
+export default EditDetailDokter;

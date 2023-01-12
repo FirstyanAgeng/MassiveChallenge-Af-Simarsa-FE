@@ -4,15 +4,49 @@ import { ADMIN_DASHBOARD,  DETAIL_DOKTER} from "../../router";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import "../../styles/admin.css";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
+// import { location } from "react-router-dom";
 
 
 const DataDokter = () => {
+    const navigate = useNavigate();
+    const [name, setName] = useState("");
+    const [spesialis, setSpesialis] = useState("");
+    const [telp, setTelp] = useState("");
+    const [password, setPassword] = useState("");
+    const [role, setRole] = useState("Dokter");
+    // const [jadwal, setJadwal] = useState("");
+    const [dokter, setDokter] = useState([]);
+
+    useEffect(() => {
+        getDataDokter();
+      }, []);
+    
+    const getDataDokter = async () => {
+        const response = await axios.get("http://localhost:5100/dokter");
+        setDokter(response.data);
+      };
+
+    const saveDokter = async (e) => {
+        e.preventDefault();
+        try {
+          await axios.post("http://localhost:5100/dokter", {
+            name, spesialis, telp, password, role
+          });
+          navigate(0);
+        // location.reload()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const navigate = useNavigate();
 
 
     return (
@@ -55,17 +89,20 @@ const DataDokter = () => {
 
                         {/* modal */}
                         <Modal show={show} onHide={handleClose}>
+                        <Form onSubmit={saveDokter}>
                         <Modal.Header closeButton>
                         <Modal.Title>Form Tambah Dokter</Modal.Title>
                         </Modal.Header>
+                        
                         <Modal.Body>
-                        <Form>
                             <Form.Group className="mb-3">
                             <Form.Label className="bold tab1">Nama Dokter</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Nama dokter"
                                 autoFocus
+                                value={name}
+                                onChange = {(e) => setName(e.target.value)}
                             />
                             </Form.Group>
 
@@ -75,6 +112,8 @@ const DataDokter = () => {
                                 type="text"
                                 placeholder="Spesialis"
                                 autoFocus
+                                value={spesialis}
+                                onChange = {(e) => setSpesialis(e.target.value)}
                             />
                             </Form.Group>
                             <Form.Group className="mb-3">
@@ -83,6 +122,8 @@ const DataDokter = () => {
                                 type="number"
                                 placeholder="Nomor Telepon"
                                 autoFocus
+                                value={telp}
+                                onChange = {(e) => setTelp(e.target.value)}
                             />
                             </Form.Group>
                             <Form.Group className="mb-3">
@@ -91,169 +132,49 @@ const DataDokter = () => {
                                 type="password"
                                 placeholder="Password"
                                 autoFocus
+                                value={password}
+                                onChange = {(e) => setPassword(e.target.value)}
                             />
                             </Form.Group>
                             <Form.Label className="bold ">Role</Form.Label>
-                            <Form.Select aria-label="Default select example">
+                            <Form.Select aria-label="Default select example"
+                                value={role}
+                                onChange = {(e) => setRole(e.target.value)}>
                                 <option value="1">Dokter</option>
                                 <option value="2">Perawat</option>
                             </Form.Select>
-                                </Form>
                                 </Modal.Body>
                                 <Modal.Footer>
-                                <Button className="btnModal" variant="outline-dark" onClick={handleClose}>
+                                <Button className="btnModal" variant="outline-dark" onClick={handleClose} type="submit">
                                     OK
                                 </Button>
                                 </Modal.Footer>
+                                </Form>
                             </Modal>
                         </Row>
 
                         {/* card poli dokter */}
                         <Container className="container-fluid text-center mb-5">
                         <Row>
-                            <Col sm={6}>
-                                <Card className="cardDo1 content mt-4">
+                            {dokter.map((dokter)=>(    
+                            <Col sm={6} key={dokter.id}>
+                                <Card className="cardDo1 content mt-4 mb-4">
                                 <Row>
                                     <Col  className="mt-4">
-                                        <h6><strong>POLI PARU</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Wahyu Mustiadi, Sp.P. M. Kes</h6>
+                                        <h6><strong>POLI {dokter.spesialis}</strong></h6>
+                                        <h6 className="text mt-2 mb-5">{dokter.name}</h6>
                                     </Col>
                                     <Col className="mt-3 text-center mt-4">
                                     <button class="btnDataDokter btn btnpad"  onClick={() => navigate(DETAIL_DOKTER)}>Lihat data</button>
-                                    <small className="text">Jadwal: Selasa, Kamis, Sabtu</small>
+                                    <small className="text">Jadwal: {dokter.jadwal_praktik}</small>
                                     </Col>
                                 </Row>
                                 </Card>
                             </Col>
+                            ))}
                             
-                            <Col sm={6}>
-                                <Card className="cardDo1 content mt-4">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI RADIOLOGI</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Anisah Amalia, Sp.P.Rad</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad" onClick={() => navigate(DETAIL_DOKTER)}>Lihat data</button>
-                                    <small className="text">Jadwal: Senin -  Kamis</small>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
                         </Row>
 
-                        <Row className="mt-5">
-                            <Col sm={6}>
-                                <Card className="cardDo1 content mt-4">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI ANAK</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Tiara Nurlita Sari, Sp.A.</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad " onClick={() => navigate(DETAIL_DOKTER)}>Lihat data</button>
-                                    <small className="text">Jadwal: Senin - Kamis</small>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                            
-                            <Col sm={6}>
-                                <Card className="cardDo1 content mt-4">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI SARAF</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Yohanes Wiliam Prasetyo, Sp.S</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad" onClick={() => navigate(DETAIL_DOKTER)}>Lihat data</button>
-                                    <small className="text">Jadwal: Senin -  Sabtu</small>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                        </Row>
-
-                        <Row className="mt-5">
-                            <Col sm={6}>
-                                <Card className="cardDo1 content mt-4">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI ANAK</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Imade Dikky Kalsa, Sp.A.</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btnpad btn" onClick={() => navigate(DETAIL_DOKTER)}>Lihat data</button>
-                                    <small className="text">Jadwal: Senin - Sabtu</small>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                            
-                            <Col sm={6}>
-                                <Card className="cardDo1 content mt-4">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI P.DALAM</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.I Gede Arinton, Sp.PD-KGEH,M.Kom,MMR</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad" onClick={() => navigate(DETAIL_DOKTER)}>Lihat data</button>
-                                    <small className="text">Jadwal: Senin -  Sabtu</small>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                        </Row>
-
-                        <Row className="mt-5">
-                            <Col sm={6}>
-                                <Card className="cardDo1 content mt-4">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI KANDUNGAN</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Sutrisno, M.Kes., SP.OG,Subsp.ONK</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btnpad btn" onClick={() => navigate(DETAIL_DOKTER)}>Lihat data</button>
-                                    <small className="text">Jadwal: Senin - Sabtu</small>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                            
-                            <Col sm={6}>
-                                <Card className="cardDo1 content mt-4">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI P.DALAM</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Achmad Happy Oktavianto, M.Sc, Sp.PD</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad"onClick={() => navigate(DETAIL_DOKTER)}>Lihat data</button>
-                                    <small className="text">Jadwal: Senin -  Sabtu</small>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                        </Row>
-
-                        <Row className="mt-5">
-                        <Col sm={6}>
-                                <Card className="cardDo1 content mt-4">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI KANDUNGAN</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Budi Irawan, M.Sc, Sp.OG</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad" onClick={() => navigate(DETAIL_DOKTER)}>Lihat data</button>
-                                    <small className="text">Jadwal: Senin -  Sabtu</small>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                        </Row>
                         </Container>
                     </Card.Body>
                 </Card>

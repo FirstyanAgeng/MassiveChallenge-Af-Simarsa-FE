@@ -8,10 +8,13 @@ const ADMIN_DASHBOARD = "/dashboard";
 const LOGIN = "/login";
 const DATA_DOKTER = "/data-dokter";
 const DETAIL_DOKTER = "/detail-dokter";
+const EDIT_DETAIL_DOKTER = "/detail-dokter/edit";
 const DATA_POLIKLINIK = "/data-poliklinik";
 const DATA_POLI = "/data-poli";
 const DATA_PASIEN = "/data-pasien";
+const EDIT_DATA_PASIEN = "/data-pasien/edit";
 const RIWAYAT_PASIEN = "/riwayat-pasien";
+const EDIT_RIWAYAT = "/riwayat-pasien/edit";
 const DAFTAR_PASIEN_BARU = "/daftar-pasienbaru";
 const DAFTAR_BERHASIL = "/daftar-berhasil";
 const KARTU_ANTRIAN = "/kartu-antrian";
@@ -36,4 +39,7 @@ export {
   DAFTAR_BERHASIL,
   KARTU_ANTRIAN,
   DAFTAR_PASIEN_LAMA, 
+  EDIT_DETAIL_DOKTER,
+  EDIT_DATA_PASIEN,
+  EDIT_RIWAYAT
 };

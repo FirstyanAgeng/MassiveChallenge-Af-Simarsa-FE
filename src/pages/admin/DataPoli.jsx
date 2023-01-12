@@ -7,19 +7,40 @@ import {FaSort} from "react-icons/fa";
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 
 const DataPoli = () => {
   const navigate = useNavigate();
+  const [pasien, setPasien] = useState([]);
+
+  useEffect(() => {
+      getPasien();
+    }, []);
+
+  const getPasien = async () => {
+    const response = await axios.get("http://localhost:5100/pasien");
+    setPasien(response.data);
+  };
+
+  const deletePasien = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5100/pasien/${id}`);
+      getPasien();
+    } catch (error) {
+      console.log(error);
+    }
+  };  
+
     return (
         <AdminLayout>
             <div className="dataPoli">
             <Container className="container2 container mb-4">
             <Row>
 
-<Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -59,92 +80,26 @@ const DataPoli = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                          <th><p className="sed">Sedang diproses</p></th>
-                        <td>UM01</td>
-                        <td>Tengku Mahmudi</td>
-                        <td>24/11/2022</td>
-                        <td className="ad">
-                            <Button className="sed sed1" onClick={() => navigate(DATA_PASIEN)}>Lihat</Button>
-                            <Button className="sed sed2" variant="danger">Hapus</Button></td>
-                      </tr>
-                      
-                      <tr>
-                          <th><p className="sed">Sedang diproses</p></th>
-                        <td>UM01</td>
-                        <td>Tengku Mahmudi</td>
-                        <td>24/11/2022</td>
-                        <td className="ad">
-                            <Button className="sed sed1" onClick={() => navigate(DATA_PASIEN)}>Lihat</Button>
-                            <Button className="sed sed2" variant="danger">Hapus</Button></td>
-                      </tr>
-
-                      <tr>
-                          <th><p className="sed">Sedang diproses</p></th>
-                        <td>UM02</td>
-                        <td>Wahyu Tia</td>
-                        <td>24/11/2022</td>
-                        <td className="ad">
-                            <Button className="sed sed1" onClick={() => navigate(DATA_PASIEN)}>Lihat</Button>
-                            <Button className="sed sed2" variant="danger">Hapus</Button></td>
-                      </tr>
-
-                      <tr>
-                          <th><p className="sed">Sedang diproses</p></th>
-                        <td>UM03</td>
-                        <td>Zepi Rara</td>
-                        <td>24/11/2022</td>
-                        <td className="ad">
-                            <Button className="sed sed1" onClick={() => navigate(DATA_PASIEN)}>Lihat</Button>
-                            <Button className="sed sed2" variant="danger">Hapus</Button></td>
-                      </tr>
-
-                      <tr>
-                          <th><p className="sed">Sedang diproses</p></th>
-                        <td>UM04</td>
-                        <td>Rian</td>
-                        <td>23/11/2022</td>
-                        <td className="ad">
-                            <Button className="sed sed1" onClick={() => navigate(DATA_PASIEN)}>Lihat</Button>
-                            <Button className="sed sed2" variant="danger">Hapus</Button></td>
-                      </tr>
-
-                      <tr>
-                          <th><p className="sed">Sedang diproses</p></th>
-                        <td>UM05</td>
-                        <td>Wahyu</td>
-                        <td>23/11/2022</td>
-                        <td className="ad">
-                            <Button className="sed sed1" onClick={() => navigate(DATA_PASIEN)}>Lihat</Button>
-                            <Button className="sed sed2" variant="danger">Hapus</Button></td>
-                      </tr>
-                      <tr>
-                          <th><p className="sed">Sedang diproses</p></th>
-                        <td>UM06</td>
-                        <td>Mamat</td>
-                        <td>23/11/2022</td>
-                        <td className="ad">
-                            <Button className="sed sed1" onClick={() => navigate(DATA_PASIEN)}>Lihat</Button>
-                            <Button className="sed sed2" variant="danger">Hapus</Button></td>
-                      </tr>
-                      <tr>
-                          <th><p className="sed">Sedang diproses</p></th>
-                        <td>UM07</td>
-                        <td>adi</td>
-                        <td>23/11/2022</td>
-                        <td className="ad">
-                            <Button className="sed sed1" onClick={() => navigate(DATA_PASIEN)}>Lihat</Button>
-                            <Button className="sed sed2" variant="danger">Hapus</Button></td>
-                      </tr>
-                      <tr>
-                          <th><p className="sed">Sedang diproses</p></th>
-                        <td>UM08</td>
-                        <td>Anton</td>
-                        <td>23/11/2022</td>
-                        <td className="ad">
-                            <Button className="sed sed1" onClick={() => navigate(DATA_PASIEN)}>Lihat</Button>
-                            <Button className="sed sed2" variant="danger">Hapus</Button></td>
-                      </tr>
+                    {pasien.map((pasien) => (
+                <tr key={pasien.id}>
+                <th><p className="sed">Sedang diproses</p></th>
+                <td>UM0{pasien.id-5}</td>
+                <td>{pasien.name}</td>  
+                <td>{pasien.jadwal}</td>
+                <td className="ad">
+                  <Button
+                  onClick={() => navigate(DATA_PASIEN)} 
+                  className="sed sed1"                  >
+                    Lihat
+                  </Button>
+                  <Button
+                    onClick={() => deletePasien(pasien.id)}
+                    className="sed sed2" variant="danger"                  >
+                    Hapus
+                  </Button>
+                </td>
+              </tr>
+            ))}
                     </tbody>
                     </Table>
 

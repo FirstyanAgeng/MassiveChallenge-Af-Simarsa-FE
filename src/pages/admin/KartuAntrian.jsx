@@ -2,10 +2,24 @@ import { Container, Card, Row, Col } from "react-bootstrap";
 import "../../styles/admin.css";
 import { useNavigate } from "react-router-dom";
 import { ADMIN_DASHBOARD} from "../../router";
+import { saveAs } from 'file-saver';
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 
 
 const KartuAntrian = () =>{
   const navigate = useNavigate();
+  const [pasien, setPasien] = useState([]);
+
+  useEffect(() => {
+    getPasienById();
+  }, []);
+  const getPasienById = async () => {
+    const response = await axios.get("http://localhost:5100/pasien/:id");
+    setPasien(response.data);
+  };
+
     return(
         <div className="kartuAntrian pageAntrian">
             <Container className="cont9 text-center">
@@ -20,7 +34,7 @@ const KartuAntrian = () =>{
             <Card.Body style={{marginTop:"0px"}}>
                 <Row className="content9 mb-3">
                 <p className="mt-2 mb-2 idl">
-                <strong>UM01</strong>
+                <strong>UM0</strong>
                 <span>
                   <p className="idl1">
                     Kamis
@@ -34,6 +48,7 @@ const KartuAntrian = () =>{
                 <span>
                   <p className="idl3">
                 dr. Wahyu Mustiadi, Sp. P. M.Kes 
+              {/* {pasien.dokter} */}
                   </p>
                 </span>
               </p>

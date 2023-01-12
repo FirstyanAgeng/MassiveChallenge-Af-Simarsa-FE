@@ -13,7 +13,7 @@ const DaftarPasienLama = () => {
   const [nrk, setNrk] = useState("");
   const [name, setName] = useState("");
   const [telp, setTelp] = useState("");
-  const [jenis_kelamin, setJenis_kelamin] = useState("Pria");
+  const [jenis_kelamin, setJenis_kelamin] = useState("Laki-laki");
   const [poli, setPoli] = useState("Paru");
   const [dokter, setDokter] = useState("dr. Wahyu Mustiadi, Sp. P. M.Kes. (PARU)");
   const [jadwal, setJadwal] = useState("");
@@ -126,8 +126,8 @@ const DaftarPasienLama = () => {
                             value={jenis_kelamin}
                             onChange={(e) => setJenis_kelamin(e.target.value)}
                             required                          >
-                    <option value="Pria">Pria</option>
-                    <option value="Wanita">Wanita</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
                           </Form.Select>
                         </Form.Group>
                     </div>

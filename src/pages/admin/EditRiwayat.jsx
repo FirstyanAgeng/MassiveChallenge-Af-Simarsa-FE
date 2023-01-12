@@ -1,7 +1,7 @@
 import AdminLayout from "../../components/AdminLayout";
 import { Container, Card, Row, Navbar, Nav, Col, Form, Button} from "react-bootstrap";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
-import { ADMIN_DASHBOARD, DATA_POLIKLINIK, DATA_POLI, DATA_PASIEN, EDIT_RIWAYAT} from "../../router";
+import { ADMIN_DASHBOARD, DATA_POLIKLINIK, DATA_POLI, DATA_PASIEN, RIWAYAT_PASIEN} from "../../router";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -27,7 +27,20 @@ const RiwayatPasien= () =>{
         status_pulang:"Rawat Jalan"
       });
 
-      
+      function handleChange(e) {
+        let newFormState = { ...riwayat };
+        newFormState[e.target.name] = e.target.value;
+        setRiwayat(newFormState);
+      }
+      function handleSubmit(e){
+        e.preventDefault();
+        let data = [...riwayat];
+
+        if (riwayat.name === ""){
+            return false;
+        }
+        setRiwayat(data);
+      }
 
     return (
         <AdminLayout>
@@ -69,9 +82,10 @@ const RiwayatPasien= () =>{
                         </Col>
 
                         <Col sm={6}>
+                        <Form onSubmit={handleSubmit}>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold">Jenis Kunjungan</Form.Label>
-                        <Form.Select value={riwayat.jenis_kunjungan} disabled>
+                        <Form.Select value={riwayat.jenis_kunjungan} onChange={handleChange} name="jenis_kunjungan">
                         <option>Riwayat Jalan</option>
                         </Form.Select>
                         </Form.Group>
@@ -80,17 +94,17 @@ const RiwayatPasien= () =>{
                         <Form.Label className="bold">Tanggal Kunjungan</Form.Label>
                         <Row>
                             <Col>
-                            <Form.Control value={riwayat.tanggal_kunjungan} disabled/>
+                            <Form.Control value={riwayat.tanggal_kunjungan} onChange={handleChange} name="tanggal_kunjungan"/>
                             </Col>
                             <Col>
-                            <Form.Control value={riwayat.jam_kunjungan} disabled />
+                            <Form.Control value={riwayat.jam_kunjungan}  onChange={handleChange} name="jam_kunjungan"/>
                             </Col>
                         </Row>
                         </Form.Group>
 
                         <Form.Group className="mb-3 tab1">
                             <Form.Label className="bold">Anamnesa</Form.Label>
-                            <Form.Control value={riwayat.anamnesa} disabled 
+                            <Form.Control value={riwayat.anamnesa} onChange={handleChange} name="anamnesa"
                             as="textarea" rows={4} />
                         </Form.Group>
 
@@ -98,10 +112,10 @@ const RiwayatPasien= () =>{
                         <Form.Label className="bold">Riwayat Alergi Obat</Form.Label>
                         <Row>
                             <Col>
-                            <Form.Control value="Obat" disabled/>
+                            <Form.Control value="Obat" />
                             </Col>
                             <Col>
-                            <Form.Select value={riwayat.alergiObat} disabled>
+                            <Form.Select value={riwayat.alergiObat} onChange={handleChange} name="alergiObat">
                             <option className="text-center">-- Tidak ada --</option>
                             </Form.Select>
                             </Col>
@@ -110,13 +124,13 @@ const RiwayatPasien= () =>{
 
                         <Form.Group className="mb-3 tab1">
                             <Form.Label className="bold">Terapi Obat</Form.Label>
-                            <Form.Control value={riwayat.terapi_obat} disabled 
+                            <Form.Control value={riwayat.terapi_obat} onChange={handleChange} name="terapi_obat"
                             as="textarea" rows={4} />
                         </Form.Group>
 
                         <Form.Group className="mb-3 tab1">
                             <Form.Label className="bold">Diagnosa</Form.Label>
-                            <Form.Control value={riwayat.diagnosa} disabled 
+                            <Form.Control value={riwayat.diagnosa} onChange={handleChange} name="diagnosa"
                             as="textarea" rows={4} />
                         </Form.Group>
 
@@ -125,11 +139,11 @@ const RiwayatPasien= () =>{
                         <Row>
                             <Col>
                             <Form.Label className="bold">Tinggi Badan (cm)</Form.Label>
-                            <Form.Control value={riwayat.tinggi_badan} disabled />
+                            <Form.Control value={riwayat.tinggi_badan}  onChange={handleChange} name="tinggi_badan"/>
                             </Col>
                             <Col>
                             <Form.Label className="bold">Berat Badan (kg)</Form.Label>
-                            <Form.Control value={riwayat.berat_badan} disabled />
+                            <Form.Control value={riwayat.berat_badan} onChange={handleChange} name="berat_badan"/>
                             </Col>
                         </Row>
                         </Form.Group>
@@ -139,11 +153,11 @@ const RiwayatPasien= () =>{
                         <Row>
                             <Col>
                             <Form.Label className="bold">Sistole (mmHg)</Form.Label>
-                            <Form.Control value={riwayat.sistole} disabled />
+                            <Form.Control value={riwayat.sistole} onChange={handleChange} name="sistole"/>
                             </Col>
                             <Col>
                             <Form.Label className="bold">Diastole (mmHg)</Form.Label>
-                            <Form.Control value={riwayat.diastole} disabled />
+                            <Form.Control value={riwayat.diastole} onChange={handleChange} name="diastole"/>
                             </Col>
                         </Row>
                         </Form.Group>
@@ -151,20 +165,23 @@ const RiwayatPasien= () =>{
                         <Row>
                             <Col sm={6}>
                             <Form.Label className="bold">Suhu (C)</Form.Label>
-                            <Form.Control value={riwayat.suhu} disabled />
+                            <Form.Control value={riwayat.suhu} onChange={handleChange} name="suhu"/>
                             </Col>
                         </Row>
                         </Form.Group>
 
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold">Status Pulang</Form.Label>
-                        <Form.Select value={riwayat.status_pulang} disabled>
-                        <option>Rawat Jalan</option>                        <option>Rawat Jalan</option>
+                        <Form.Select value={riwayat.status_pulang} onChange={handleChange} name="riwayat_pulang">
+                        <option>Rawat Jalan</option>
                         <option>Rawat Inap</option>
                         </Form.Select>
                         </Form.Group>
                         <Form.Label className="bold tab1">*Pastikan semua data terisi benar</Form.Label>
-                        <Button className="km2 mt-3" onClick={()=>navigate(EDIT_RIWAYAT)}>Edit</Button>
+                        <Button className="km2 mt-3" type="submit"
+                        onClick={()=>navigate(RIWAYAT_PASIEN)}
+                        >Simpan</Button>
+                        </Form>
                         </Col>
                     </Row>
                 </Container>

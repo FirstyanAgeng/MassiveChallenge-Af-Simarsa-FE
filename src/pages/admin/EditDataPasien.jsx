@@ -1,7 +1,7 @@
 import AdminLayout from "../../components/AdminLayout";
 import { Container, Card, Row, Navbar, Nav, Col, Form, Tabs, Button, Tab} from "react-bootstrap";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
-import { ADMIN_DASHBOARD, DATA_POLIKLINIK, DATA_POLI, RIWAYAT_PASIEN, EDIT_DATA_PASIEN} from "../../router";
+import { ADMIN_DASHBOARD, DATA_POLIKLINIK, DATA_POLI, RIWAYAT_PASIEN, DATA_PASIEN} from "../../router";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -11,18 +11,47 @@ import "../../styles/admin.css";
 import male from "../../assets/images/male.png";
 
 
-const DataPasien= () => {
+const EditDataPasien= () => {
     const navigate = useNavigate();
-    const [pasien, setPasien] = useState([]);
 
-    useEffect(() => {
-        getDataPasienById();
-      }, []);
-    const getDataPasienById = async () => {
-        const response = await axios.get("http://localhost:5100/pasien/6");
-        setPasien(response.data);
-      };
-
+    const [pasien, setPasien] = useState({
+        name: "",
+        nik: "",
+        nrk:"",
+        jenis_kelamin: "",
+        telp: ""
+      });
+  
+      function handleChange(e) {
+        let newFormState = { ...pasien };
+        newFormState[e.target.name] = e.target.value;
+        setPasien(newFormState);
+      }
+  
+      useEffect(() => {
+          getDatapasienById();
+        }, []);
+  
+      const getDatapasienById = async () => {
+          const response = await axios.get("http://localhost:5100/pasien/6");
+          setPasien(response.data);
+        };
+  
+        const updatePasien = async (e) => {
+          e.preventDefault();
+          try {
+            await axios.patch("http://localhost:5100/pasien/6", {
+              name: pasien.name,
+              nik: pasien.nik,
+              nrk: pasien.nrk,
+              jenis_kelamin: pasien.jenis_kelamin,
+              telp: pasien.telp
+            });
+            navigate(DATA_PASIEN);
+          } catch (error) {
+            console.log(error);
+          }
+        };
     return(
     <AdminLayout>
         <div className="dataPasien">
@@ -64,32 +93,41 @@ const DataPasien= () => {
                         <Col sm={6}>
                         <Tabs defaultActiveKey="profile-dokter" className="mb-3 tabq" justify>
                         <Tab eventKey="profile-dokter" title="Detail Pasien">
+                        <Form onSubmit={updatePasien}>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">NIK</Form.Label>
-                        <Form.Control value={pasien.nik} disabled />
+                        <Form.Control value={pasien.nik} 
+                        onChange={handleChange}
+                        name="nik"/>
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">No. Rekam Medis</Form.Label>
-                        <Form.Control value={pasien.nrk} disabled />
+                        <Form.Control value={pasien.nrk} 
+                        onChange={handleChange}
+                        name="nrk"/>
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">Nama Lengkap</Form.Label>
-                        <Form.Control value={pasien.name} disabled />
+                        <Form.Control value={pasien.name} 
+                        onChange={handleChange}
+                        name="name"/>
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
-                        <Form.Label className="bold ">Jenis Kelamin</Form.Label>
-                        <Form.Select value={pasien.jenis_kelamin} disabled >
+                        <Form.Label className="bold "
+                        >Jenis Kelamin</Form.Label>
+                        <Form.Select value={pasien.jenis_kelamin}>
                         <option>Laki-laki</option>
                         <option>Perempuan</option>
                         </Form.Select>
                         </Form.Group>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">No. HP</Form.Label>
-                        <Form.Control value={pasien.telp} disabled />
+                        <Form.Control value={pasien.telp} 
+                        onChange={handleChange}
+                        name="telp"/>
                         </Form.Group>
-                        <Button className="km2"
-                        onClick={() => navigate(EDIT_DATA_PASIEN)}
-                        >Edit</Button>
+                        <Button className="km2" type="submit">Simpan</Button>
+                        </Form>
 
                         </Tab>
 
@@ -137,4 +175,4 @@ const DataPasien= () => {
     </AdminLayout>
     );
 };
-export default DataPasien;
+export default EditDataPasien;
