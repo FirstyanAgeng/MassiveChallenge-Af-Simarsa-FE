@@ -20,6 +20,9 @@ import DaftarPasienLama from "./pages/admin/daftarPasienLama"
 import EditDetailDokter from "./pages/admin/EditDetailDokter";
 import EditDataPasien from "./pages/admin/EditDataPasien"
 import EditRiwayat from "./pages/admin/EditRiwayat"
+import Karir from "./pages/Karir"
+import Artikel from "./pages/Artikel"
+import DetailArtikel from "./pages/DetailArtikel"
 
 import {
   HOME,
@@ -42,7 +45,10 @@ import {
   DAFTAR_PASIEN_LAMA,
   EDIT_DETAIL_DOKTER,
   EDIT_DATA_PASIEN,
-  EDIT_RIWAYAT
+  EDIT_RIWAYAT,
+  KARIR,
+  ARTIKEL,
+  DETAIL_ARTIKEL
 } from "./router";
 
 function App() {
@@ -55,6 +61,9 @@ function App() {
         <Route path={DOKTER} element={<DaftarDokter />} />
         <Route path={DAFTAR} element={<Pendaftaran />} />
         <Route path={HUBUNGI} element={<HubungiKami />} />
+        <Route path={KARIR} element={<Karir />} />
+        <Route path={ARTIKEL} element={<Artikel />} />
+        <Route path={DETAIL_ARTIKEL} element={<DetailArtikel />} />
         <Route path={ADMIN_DASHBOARD} element={<AdminHome />} />
         <Route path={LOGIN} element={<Login />} />
         <Route path={DATA_DOKTER} element={<DataDokter />} />

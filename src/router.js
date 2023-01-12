@@ -19,6 +19,9 @@ const DAFTAR_PASIEN_BARU = "/daftar-pasienbaru";
 const DAFTAR_BERHASIL = "/daftar-berhasil";
 const KARTU_ANTRIAN = "/kartu-antrian";
 const DAFTAR_PASIEN_LAMA = "/daftar-pasienlama"
+const KARIR = "/karir"
+const ARTIKEL = "/artikel"
+const DETAIL_ARTIKEL = "/detail-artikel"
 
 export {
   HOME,
@@ -41,5 +44,8 @@ export {
   DAFTAR_PASIEN_LAMA, 
   EDIT_DETAIL_DOKTER,
   EDIT_DATA_PASIEN,
-  EDIT_RIWAYAT
+  EDIT_RIWAYAT,
+  KARIR, 
+  ARTIKEL,
+  DETAIL_ARTIKEL
 };
