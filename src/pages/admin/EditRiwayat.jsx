@@ -45,40 +45,41 @@ const RiwayatPasien= () =>{
     return (
         <AdminLayout>
                     <div className="dataPasien">
-            <Container className="containerDataPasien container mb-4">
-                <Row>
-                <Navbar bg="light" expand="lg">
-                <Container>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <AiFillHome size="25px" className="ho"/>
-                        <Nav.Link href={ADMIN_DASHBOARD}>Home</Nav.Link><AiOutlineRight className="ho1"/>
-                        <Nav.Link href={DATA_POLIKLINIK}>Data Poliklinik</Nav.Link><AiOutlineRight className="ho1"/>
-                        <Nav.Link href={DATA_POLI}>Data Poli</Nav.Link><AiOutlineRight className="ho1"/>
-                        <Nav.Link href={DATA_PASIEN}>Data Pasien</Nav.Link><AiOutlineRight className="ho1"/>
-                        <Nav.Link style={{color: 'black'}}>Riwayat Rekam Medis</Nav.Link>
-                    </Nav>
-                    </Navbar.Collapse>
-                </Container>
-                </Navbar>
-                </Row>
-            </Container>
-
-            <Container className="cont">
+                    <Container className="container-nav-home mb-3">
             <Row>
-                <Card className="cardDetailPasien">
+
+                <Navbar bg="light" expand="lg">
+            <Container>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                    <AiFillHome size="25px" className="ho"/>
+                    <Nav.Link href={ADMIN_DASHBOARD}>Home</Nav.Link><AiOutlineRight className="ho1"/>
+                    <Nav.Link href={DATA_POLIKLINIK}>Data Poliklinik</Nav.Link><AiOutlineRight className="ho1"/>
+                        <Nav.Link href={DATA_POLI}>Data Poli</Nav.Link><AiOutlineRight className="ho1"/>
+                        <Nav.Link href={DATA_PASIEN}>Data Detail Pasien</Nav.Link><AiOutlineRight className="ho1"/>
+                    <Nav.Link style={{color: 'black'}}>Riwayat Rekam Medis</Nav.Link>
+                </Nav>
+                </Navbar.Collapse>
+            </Container>
+            </Navbar>
+            </Row>
+        </Container>
+
+            <Container className="pageJadwalPraktik mt-1 mb-3">
+            <Row>
+                <Card className="cardJadwalPraktik pb-5">
                 <Card.Body>
                     <Row>
-                        <Card.Title className="card-title pl-4">
+                        <Card.Title className="title-Detailpasien">
                         <h4>Riwayat Rekam Medis</h4>
                         </Card.Title>
                     </Row>
 
                 <Container className="container-fluid mb-5">
                     <Row>
-                        <Col sm={6} style={{paddingLeft: '0px'}}>
-                        <img src={male} alt="" className="mt-5 ma"/>
+                        <Col sm={6}>
+                        <img src={male} alt="" className="imgPasien"/>
                         </Col>
 
                         <Col sm={6}>

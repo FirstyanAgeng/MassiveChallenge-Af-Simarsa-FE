@@ -55,44 +55,60 @@ const EditDataPasien= () => {
     return(
     <AdminLayout>
         <div className="dataPasien">
-            <Container className="containerDataPasien container mb-4">
-                <Row>
-                <Navbar bg="light" expand="lg">
-                <Container>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <AiFillHome size="25px" className="ho"/>
-                        <Nav.Link href={ADMIN_DASHBOARD}>Home</Nav.Link><AiOutlineRight className="ho1"/>
-                        <Nav.Link href={DATA_POLIKLINIK}>Data Poliklinik</Nav.Link><AiOutlineRight className="ho1"/>
-                        <Nav.Link href={DATA_POLI}>Data Poli</Nav.Link><AiOutlineRight className="ho1"/>
-                        <Nav.Link style={{color: 'black'}}>Data Pasien</Nav.Link>
-                    </Nav>
-                    </Navbar.Collapse>
-                </Container>
-                </Navbar>
-                </Row>
-            </Container>
-
-            <Container className="cont">
+        <Container className="container-nav-home mb-3">
             <Row>
-                <Card className="cardDetailPasien">
+
+                <Navbar bg="light" expand="lg">
+            <Container>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                    <AiFillHome size="25px" className="ho"/>
+                    <Nav.Link href={ADMIN_DASHBOARD}>Home</Nav.Link><AiOutlineRight className="ho1"/>
+                    <Nav.Link href={DATA_POLIKLINIK}>Data Poliklinik</Nav.Link><AiOutlineRight className="ho1"/>
+                        <Nav.Link href={DATA_POLI}>Data Poli</Nav.Link><AiOutlineRight className="ho1"/>
+                    <Nav.Link style={{color: 'black'}}>Data Detail Pasien</Nav.Link>
+                </Nav>
+                </Navbar.Collapse>
+            </Container>
+            </Navbar>
+            </Row>
+        </Container>
+
+            <Container className="pageJadwalPraktik mt-1 mb-3">
+            <Row>
+                <Card className="cardJadwalPraktik pb-5">
                 <Card.Body>
+
+                <Container>
                     <Row>
-                        <Card.Title className="card-title pl-4">
+                        <Col sm={6}>
+                        <Card.Title className="title-Detailpasien">
                         <h4>Detail Pasien</h4>
                         </Card.Title>
-                    </Row>
-
-                <Container className="container-fluid mb-5">
-                    <Row>
-                        <Col sm={6} style={{paddingLeft: '0px'}}>
-                        <img src={male} alt="" className="mt-5 ma"/>
+                        
+                        <img src={male} alt="" className="imgPasien"/>
                         </Col>
 
                         <Col sm={6}>
-                        <Tabs defaultActiveKey="profile-dokter" className="mb-3 tabq" justify>
-                        <Tab eventKey="profile-dokter" title="Detail Pasien">
+                        <Tab.Container defaultActiveKey="detail-pasien" className="mb-3" justify>
+                        <Row>
+                        <Nav variant="pills" className="container-tab-data-dokter">
+                            <Col>
+                            <Nav.Item>
+                                <Nav.Link eventKey="detail-pasien" className="text-center fw-bold">Detail Pasien</Nav.Link>
+                            </Nav.Item>
+                            </Col>
+                            <Col>
+                            <Nav.Item>
+                                <Nav.Link eventKey="rekam-medis" className="text-center fw-bold">Rekam Medis</Nav.Link>
+                            </Nav.Item>
+                            </Col>
+                        </Nav>
+                        </Row>
+                        
+                        <Tab.Content>
+                            <Tab.Pane eventKey="detail-pasien">
                         <Form onSubmit={updatePasien}>
                         <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold ">NIK</Form.Label>
@@ -130,13 +146,11 @@ const EditDataPasien= () => {
                         Simpan
                         </Button>
                         </Form>
+                            </Tab.Pane>
+                        </Tab.Content>
 
-                        </Tab>
-
-
-
-
-                        <Tab eventKey="jadwal-praktik" title="Rekam Medis">
+                        <Tab.Content>
+                            <Tab.Pane eventKey="rekam-medis">
                         <Card className="card2 content mt-5">
                                 <Row>
                                     <Col  className="mt-4 text-center">
@@ -161,9 +175,9 @@ const EditDataPasien= () => {
                                     </Col>
                                 </Row>
                         </Card>
-                        </Tab>
-                        
-                        </Tabs>
+                            </Tab.Pane>
+                        </Tab.Content>
+                        </Tab.Container>
 
                         </Col>
                     </Row>

@@ -233,9 +233,11 @@
   padding: 10px 40px;
 }
 
+
 /* detail dokter */
 .pageJadwalPraktik{
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
+  width: 1050px;
 }
 
 .containerJadwalPraktik a {
@@ -247,36 +249,70 @@
 }
 .cardJadwalPraktik{
   margin: auto;
+  margin-bottom: 50px;
   width: 1500px;
   border: none;
   border-radius: 15px;
   box-shadow: 1px 3px 3px rgba(124, 124, 124, 0.5);
 }
+
 .cardf{
-  width: 300px;
-  margin: 50px auto;
+  width: 200px;
+  margin: 50px auto 0 auto;
 }
-.uk{
-  margin: 50px;
-  width: 300px;
+
+.title-Detaildokter{
+  margin: 10px 0 48px 50px;
 }
-.hw{
+
+.title-Detailpasien{
+  margin: 10px 0 10px 20px;
+}
+
+.card-fotoDokter{
+  margin: 0 0 30px 48px;
+  width: 330px;
+  height: 550px;
+}
+
+.nama-dokter{
   color: #0957DE;
+  font-size: 20px;
+  font-family: poppins;
+  margin: 10px 30px;
 }
-.hw1{
+.jadwal-dokter{
+  font-size: 20px;
   color: #9B9B9B;
 }
-.hw2{
+.telp-dokter{
+  font-size: 20px;
   color: #C4C3C3;
 }
 .category{
   background-color: #09C2DE;
   color: white;
-  width: 50%;
+  width: 40%;
   margin: auto;
   border-radius: 20px 20px 20px 20px;
   padding: 7px;
+  font-size: 20px;
 }
+
+.shield-detaildokter{
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+
+.edit{
+  margin: 0 5px 5px 0;
+  color: white;
+}
+.edit:hover{
+  margin: 0 5px 5px 0;
+  color: #0957DE;
+}
+
 .km, .km2{
   font-size: 20px;
   background-color: #09C2DE;
@@ -286,6 +322,7 @@
   margin: 0;
   padding: 10px 0;
 }
+
 .c1{
   font-size: x-large;
   margin-left: 60px;
@@ -293,9 +330,12 @@
 .tab1{
   margin: 0 10px;
 }
-.tabq{
+
+.container-tab-data-dokter{
   color: black;
+  margin: 10px 0 30px 20px;
 }
+
 .km2{
   background-color: #0957DE;
 }
@@ -310,6 +350,10 @@
 }
 
 /* data poliklinik */
+
+.list-data-antrian{
+  font-size: 8px;
+}
 .card2{
   margin: auto;
   padding: 10px 20px;
@@ -448,10 +492,11 @@
   border-radius: 15px;
   box-shadow: 1px 3px 3px rgba(124, 124, 124, 0.5);
 }
-.ma{
-  margin-left: 0;
-  width: 300px;
+.imgPasien{
+  margin: 40px 0 0 40px;
+  width: 240px;
 }
+
 .sd{
   width: 170px;
 }

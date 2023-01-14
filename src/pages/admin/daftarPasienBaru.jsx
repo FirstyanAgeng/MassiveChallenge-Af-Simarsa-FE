@@ -34,27 +34,27 @@ const DaftarPasienBaru = () => {
   return (
     <AdminLayout>
       <div className="daftarPasienBaru">
-        <Container>
-          <Row>
+        <Container className="container-nav-home mb-3">
+        <Row>
+
             <Navbar bg="light" expand="lg">
-              <Container className="container2 container mb-4">
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="me-auto">
-                    <AiFillHome size="25px" className="ho" />
-                    <Nav.Link href={ADMIN_DASHBOARD}>Home</Nav.Link>
-                    <AiOutlineRight className="ho1" />
-                    <Nav.Link style={{ color: "black" }}>Pendaftaran</Nav.Link>
-                  </Nav>
-                </Navbar.Collapse>
-              </Container>
-            </Navbar>
-          </Row>
+        <Container>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+                <AiFillHome size="25px" className="ho"/>
+                <Nav.Link href={ADMIN_DASHBOARD}>Home</Nav.Link><AiOutlineRight className="ho1"/>
+                <Nav.Link style={{color: 'black'}}>Pendaftaran</Nav.Link>
+            </Nav>
+            </Navbar.Collapse>
+        </Container>
+        </Navbar>
+            </Row>
         </Container>
 
         <Container className="cont">
           <Row>
-            <Card className="cardJadwalPraktik card">
+            <Card className="cardJadwalPraktik">
               <Card.Body>
                 <Row>
                   <Card.Title>

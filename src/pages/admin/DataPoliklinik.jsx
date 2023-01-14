@@ -11,24 +11,25 @@ const DataPoliklinik = () =>{
     return(
     <AdminLayout>
         <div className="DataPoliklinik">
-        <Container className="container2 container mb-4">
+        <Container className="container-nav-home mb-3">
         <Row>
+
             <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <AiFillHome size="25px" className="ho"/>
-            <Nav.Link href={ADMIN_DASHBOARD}>Home</Nav.Link><AiOutlineRight className="ho1"/>
-            <Nav.Link style={{color: 'black'}}>Data Poliklinik</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-        </Row>
+        <Container>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+                <AiFillHome size="25px" className="ho"/>
+                <Nav.Link href={ADMIN_DASHBOARD}>Home</Nav.Link><AiOutlineRight className="ho1"/>
+                <Nav.Link style={{color: 'black'}}>Data Poliklinik</Nav.Link>
+            </Nav>
+            </Navbar.Collapse>
+        </Container>
+        </Navbar>
+            </Row>
         </Container>
         
-        <Container className="cont">
+        <Container className="container-dataDokter">
             <Row>
                 <Card className="CardDataDokter card">
                     <Card.Body>
