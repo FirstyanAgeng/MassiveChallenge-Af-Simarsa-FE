@@ -1,7 +1,8 @@
 import { Container, Card, Row, Col, Button, Nav, Form, Modal, Navbar} from "react-bootstrap";
 import AdminLayout from "../../components/AdminLayout";
-import { ADMIN_DASHBOARD,  DETAIL_DOKTER} from "../../router";
+import { ADMIN_DASHBOARD} from "../../router";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
+import {FaPlus} from "react-icons/fa"
 import { useNavigate, Link } from "react-router-dom";
 import "../../styles/admin.css";
 import React, { useState, useEffect } from 'react';
@@ -52,7 +53,7 @@ const DataDokter = () => {
     return (
         <AdminLayout>
             <div className="dataDokter">
-        <Container className="container2 container mb-4">
+        <Container className="container-nav-home">
         <Row>
 
         <Navbar bg="light" expand="lg">
@@ -70,20 +71,21 @@ const DataDokter = () => {
         </Row>
         </Container>
 
-        <Container className="cont">
+        <Container className="container-dataDokter">
             <Row>
-                <Card className="CardDataDokter card">
+                <Card className="CardDataDokter pt-3">
                     <Card.Body>
                         <Row>
                         <Col>
                         <Card.Title className="card-title pl-4">
-                            <h5>Data Dokter</h5>
+                        <h5 className="fw-bold title-dataDokter">Data Dokter</h5>
                         </Card.Title>
                         </Col>
                         
                         <Col>
-                        <Button className="btnDataDokter btn2 btn btn-block" onClick={handleShow}>
-                            TAMBAH DATA DOKTER
+                        <Button className="button-tambahDokter" onClick={handleShow}>
+                        <FaPlus size="14px" className="tambah"/>
+                            Tambah data dokter
                         </Button>
                         </Col>
 
@@ -154,7 +156,7 @@ const DataDokter = () => {
                         </Row>
 
                         {/* card poli dokter */}
-                        <Container className="container-fluid text-center mb-5">
+                        <Container className="text-center mb-5">
                         <Row>
                             {dokter.map((dokter)=>(    
                             <Col sm={6} key={dokter.id}>

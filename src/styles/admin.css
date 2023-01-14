@@ -173,10 +173,6 @@
   border-color: #0957DE;
 }
 
-.btn2{
-  background-color: rgb(165, 165, 165);
-  float: right;
-}
 .btn2:hover{
   background-color: white;
   border-color: rgb(165, 165, 165);
@@ -191,12 +187,24 @@
   padding: 5px 30px;
 }
 
+.container-dataDokter{
+  width: 1000px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
 .cardDataDokter{
   margin: auto;
+  padding-top: 20px;
   width: 1500px;
   border: none;
   border-radius: 15px;
   box-shadow: 1px 3px 3px rgba(124, 124, 124, 0.5);
+}
+
+.tambah{
+  margin: 0 4px 2px 0;
 }
 .content{
   margin: auto;
@@ -385,6 +393,33 @@
 .kir{
   color: #C4C3C3;
 }
+
+.container-nav-home{
+  width: 87%;
+  margin: auto;
+  margin-left: 88px;
+  margin-top: 10px;
+}
+
+.title-dataDokter{
+  margin-left: 35px;
+  font-size: 23px;
+}
+.button-tambahDokter{
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  margin-right: 35px;
+  background-color: rgb(195, 195, 195);
+  float: right;
+}
+.button-tambahDokter:hover {
+  background-color: white;
+  color: #0957DE;
+}
+
 .ho{
   margin-top: 7px;
   color: #C4C3C3;
@@ -392,6 +427,8 @@
 .ho1{
   margin-top: 13px;
 }
+
+
 /* data pasien */
 .containerDataPasien a {
   text-decoration: none;

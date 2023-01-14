@@ -13,10 +13,10 @@ import DataPoliklinik from "./pages/admin/DataPoliklinik";
 import DataPoli from "./pages/admin/DataPoli";
 import DataPasien from "./pages/admin/DataPasien";
 import RiwayatPasien from "./pages/admin/RiwayatRekamMedis"
-import DaftarPasienBaru from "./pages/admin/daftarPasienBaru"
-import DaftarBerhasil from "./pages/admin/daftarBerhasil"
+import DaftarPasienBaru from "./pages/admin/DaftarPasienBaru"
+import DaftarBerhasil from "./pages/admin/DaftarBerhasil"
 import KartuAntrian from "./pages/admin/KartuAntrian";
-import DaftarPasienLama from "./pages/admin/daftarPasienLama" 
+import DaftarPasienLama from "./pages/admin/DaftarPasienLama" 
 import EditDetailDokter from "./pages/admin/EditDetailDokter";
 import EditDataPasien from "./pages/admin/EditDataPasien"
 import EditRiwayat from "./pages/admin/EditRiwayat"
