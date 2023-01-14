@@ -1,8 +1,8 @@
-import { Container, Card, Row, Col, Button, Nav, Form, Modal, Navbar } from "react-bootstrap";
+import { Container, Card, Row, Col, Button, Nav, Form, Modal, Navbar} from "react-bootstrap";
 import AdminLayout from "../../components/AdminLayout";
 import { ADMIN_DASHBOARD,  DETAIL_DOKTER} from "../../router";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../../styles/admin.css";
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
@@ -165,7 +165,16 @@ const DataDokter = () => {
                                         <h6 className="text mt-2 mb-5">{dokter.name}</h6>
                                     </Col>
                                     <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad"  onClick={() => navigate(DETAIL_DOKTER)}>Lihat data</button>
+                                    <button class="btnDataDokter btn btnpad"  
+                                    // to={`detail-dokter/${dokter.id}`}
+                                    >
+                                    <Link
+                                        to={`/detail-dokter/${dokter.id}`}
+                                        className="btn-dataDokter"
+                                        >
+                                        Lihat data
+                                    </Link>
+                                        </button>
                                     <small className="text">Jadwal: {dokter.jadwal_praktik}</small>
                                     </Col>
                                 </Row>

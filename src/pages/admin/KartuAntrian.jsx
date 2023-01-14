@@ -2,9 +2,10 @@ import { Container, Card, Row, Col } from "react-bootstrap";
 import "../../styles/admin.css";
 import { useNavigate } from "react-router-dom";
 import { ADMIN_DASHBOARD} from "../../router";
-import { saveAs } from 'file-saver';
-import { useEffect, useState } from "react";
+// import { saveAs } from 'file-saver';
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import { useReactToPrint } from "react-to-print";
 
 
 
@@ -12,16 +13,26 @@ const KartuAntrian = () =>{
   const navigate = useNavigate();
   const [pasien, setPasien] = useState([]);
 
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content:() => componentRef.current,
+    documentTitle: 'kartu-antrian',
+    onAfterPrint: () => alert("Print succes"),
+    
+  })
+
   useEffect(() => {
     getPasienById();
   }, []);
   const getPasienById = async () => {
-    const response = await axios.get("http://localhost:5100/pasien/:id");
+    const response = await axios.get("http://localhost:5100/pasien/7");
     setPasien(response.data);
   };
 
     return(
-        <div className="kartuAntrian pageAntrian">
+        <div className="kartuAntrian pageAntrian"
+        ref={componentRef}
+        >
             <Container className="cont9 text-center">
             <p className="t9 bold">
                 KARTU ANTRIAN
@@ -110,7 +121,9 @@ const KartuAntrian = () =>{
                 >Home</button>
               </Col>
               <Col sm={6}>
-                <button className="btn btn7">Print</button>
+                <button className="btn btn7"
+                onClick={handlePrint}
+                >Print</button>
               </Col>
 
             </Row>

@@ -1,7 +1,7 @@
 import { Container, Card, Row, Col, Button, Nav, Form, Tab, Tabs, Navbar } from "react-bootstrap";
 import { ADMIN_DASHBOARD,  DATA_DOKTER, DETAIL_DOKTER} from "../../router";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
 import AdminLayout from "../../components/AdminLayout";
@@ -12,7 +12,7 @@ import Ava from "../../assets/images/Ava.png";
 
 const EditDetailDokter = () =>{
     const navigate = useNavigate();
-
+    const { id } = useParams();
     const [dokter, setDokter] = useState({
       name: "",
       no_izin_praktik: "",
@@ -32,21 +32,21 @@ const EditDetailDokter = () =>{
       }, []);
 
     const getDataDokterById = async () => {
-        const response = await axios.get("http://localhost:5100/dokter/8");
+        const response = await axios.get(`http://localhost:5100/dokter/${id}`);
         setDokter(response.data);
       };
 
       const updateDokter = async (e) => {
         e.preventDefault();
         try {
-          await axios.patch("http://localhost:5100/dokter/8", {
+          await axios.patch(`http://localhost:5100/dokter/${id}`, {
             name: dokter.name,
             no_izin_praktik: dokter.no_izin_praktik,
             alamat: dokter.alamat,
             ttl: dokter.ttl,
             agama: dokter.agama
           });
-          navigate(DETAIL_DOKTER);
+          navigate(`/detail-dokter/${dokter.id}`);
         } catch (error) {
           console.log(error);
         }

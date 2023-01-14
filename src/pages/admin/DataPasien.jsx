@@ -2,7 +2,7 @@ import AdminLayout from "../../components/AdminLayout";
 import { Container, Card, Row, Navbar, Nav, Col, Form, Tabs, Button, Tab} from "react-bootstrap";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
 import { ADMIN_DASHBOARD, DATA_POLIKLINIK, DATA_POLI, RIWAYAT_PASIEN, EDIT_DATA_PASIEN} from "../../router";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -13,13 +13,14 @@ import male from "../../assets/images/male.png";
 
 const DataPasien= () => {
     const navigate = useNavigate();
+    const { id } = useParams();
     const [pasien, setPasien] = useState([]);
 
     useEffect(() => {
         getDataPasienById();
       }, []);
     const getDataPasienById = async () => {
-        const response = await axios.get("http://localhost:5100/pasien/6");
+        const response = await axios.get(`http://localhost:5100/pasien/${id}`);
         setPasien(response.data);
       };
 
@@ -88,8 +89,15 @@ const DataPasien= () => {
                         <Form.Control value={pasien.telp} disabled />
                         </Form.Group>
                         <Button className="km2"
-                        onClick={() => navigate(EDIT_DATA_PASIEN)}
-                        >Edit</Button>
+                        // onClick={() => navigate(EDIT_DATA_PASIEN)}
+                        >
+                        <Link
+                        to={`/data-pasien/edit/${pasien.id}`}
+                        className="btn-dataDokter"
+                        >
+                        Edit
+                        </Link>
+                        </Button>
 
                         </Tab>
 

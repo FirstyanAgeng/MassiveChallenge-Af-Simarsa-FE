@@ -291,6 +291,15 @@
 .km2{
   background-color: #0957DE;
 }
+.km2:hover {
+  background-color: white;
+  color: #0957DE;
+  border-color: #0957DE;
+}
+.btn-dataDokter{
+  text-decoration: none;
+  color: white;
+}
 
 /* data poliklinik */
 .card2{
@@ -332,12 +341,28 @@
 .sed1{
   background-color: #0957DE;
   font-weight: bold;
-  padding: 2px 30px;
+  border-radius:5px;
+  padding: 2px 20px;
+  margin-right: 10px;
+}
+.sed1:hover{
+  background-color: white;
+  color: #0957DE;
+  font-weight: bold;
+  padding: 2px 20px;
 }
 .sed2{
     background-color: #FF795C;
     font-weight: bold;
-    padding: 2px 30px;
+    padding: 2px 15px;
+    border-radius:5px;
+    margin-left: 0;
+}
+.sed2:hover{
+  background-color: white;
+  color: #FF795C;
+  font-weight: bold;
+  padding: 2px 15px;
 }
 .ad{
   display: flex;

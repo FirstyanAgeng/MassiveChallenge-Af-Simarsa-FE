@@ -1,7 +1,7 @@
 import { Container, Card, Row, Col, Button, Nav, Form, Tab, Tabs, Navbar } from "react-bootstrap";
 import { ADMIN_DASHBOARD,  DATA_DOKTER, EDIT_DETAIL_DOKTER} from "../../router";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect} from "react";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
 import AdminLayout from "../../components/AdminLayout";
@@ -12,13 +12,16 @@ import Ava from "../../assets/images/Ava.png";
 
 const DetailDokter = () =>{
     const navigate = useNavigate();
+    const { id } = useParams();
     const [dokter, setDokter] = useState([]);
+
 
     useEffect(() => {
         getDataDokterById();
       }, []);
+
     const getDataDokterById = async () => {
-        const response = await axios.get("http://localhost:5100/dokter/8");
+        const response = await axios.get(`http://localhost:5100/dokter/${id}`);
         setDokter(response.data);
       };
       
@@ -89,9 +92,16 @@ const DetailDokter = () =>{
                         <Form.Label className="bold ">Agama</Form.Label>
                         <Form.Control value={dokter.agama} disabled />
                         </Form.Group>
-                        <Button className="km2"
-                        onClick={() => navigate(EDIT_DETAIL_DOKTER)}
-                        >Edit</Button>
+                        <Button className="km2" 
+                        // onClick={() => navigate(EDIT_DETAIL_DOKTER)}
+                        >
+                        <Link
+                        to={`/detail-dokter/edit/${dokter.id}`}
+                        className="btn-dataDokter"
+                        >
+                        Edit
+                        </Link>
+                        </Button>
 
                         </Tab>
 
@@ -119,9 +129,16 @@ const DetailDokter = () =>{
                         <Form.Label className="bold ">Jumat</Form.Label>
                         <Form.Control value="09.00 - 11.00" disabled />
                         </Form.Group>
-                        <Button className="km2" 
-                        onClick={() => navigate(EDIT_DETAIL_DOKTER)}
-                        >Edit</Button>
+                        <Button className="km2 " 
+                        // onClick={() => navigate(EDIT_DETAIL_DOKTER)}
+                        >
+                        <Link
+                        to={`edit/${dokter.id}`}
+                        className="btn-dataDokter"
+                        >
+                        Edit
+                        </Link>
+                        </Button>
                         </Tab>
                         
                         </Tabs>

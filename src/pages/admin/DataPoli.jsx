@@ -1,19 +1,18 @@
 import { Container, Card, Row, Col, Button, Nav,Table, ToggleButton, ToggleButtonGroup, Navbar} from "react-bootstrap";
 import AdminLayout from "../../components/AdminLayout";
 import "../../styles/admin.css";
-import { ADMIN_DASHBOARD, DATA_POLIKLINIK, DATA_PASIEN} from "../../router";
+import { ADMIN_DASHBOARD, DATA_POLIKLINIK} from "../../router";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
 import {FaSort} from "react-icons/fa";
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 
 
 const DataPoli = () => {
-  const navigate = useNavigate();
   const [pasien, setPasien] = useState([]);
 
   useEffect(() => {
@@ -88,9 +87,15 @@ const DataPoli = () => {
                 <td>{pasien.jadwal}</td>
                 <td className="ad">
                   <Button
-                  onClick={() => navigate(DATA_PASIEN)} 
-                  className="sed sed1"                  >
-                    Lihat
+                  // onClick={() => navigate(DATA_PASIEN)} 
+
+                  className="sed sed1">
+                  <Link
+                  to={`/data-pasien/${pasien.id}`}
+                  className="btn-dataDokter"
+                  >
+                  Lihat
+                  </Link>
                   </Button>
                   <Button
                     onClick={() => deletePasien(pasien.id)}

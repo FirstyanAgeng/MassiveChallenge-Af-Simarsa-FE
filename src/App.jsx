@@ -23,6 +23,7 @@ import EditRiwayat from "./pages/admin/EditRiwayat"
 import Karir from "./pages/Karir"
 import Artikel from "./pages/Artikel"
 import DetailArtikel from "./pages/DetailArtikel"
+import CobaPdf from "./pages/cobapdf"
 
 import {
   HOME,
@@ -48,7 +49,8 @@ import {
   EDIT_RIWAYAT,
   KARIR,
   ARTIKEL,
-  DETAIL_ARTIKEL
+  DETAIL_ARTIKEL,
+  COBA_PDF
 } from "./router";
 
 function App() {
@@ -79,6 +81,7 @@ function App() {
         <Route path={DAFTAR_BERHASIL} element={<DaftarBerhasil/>}/>
         <Route path={KARTU_ANTRIAN} element={<KartuAntrian/>}/>
         <Route path={DAFTAR_PASIEN_LAMA} element={<DaftarPasienLama/>}/>
+        <Route path={COBA_PDF} element={<CobaPdf/>}/>
         <Route path="*" element={<h1>PAGE NOT FOUND</h1>}/>
       </Routes>
     </>

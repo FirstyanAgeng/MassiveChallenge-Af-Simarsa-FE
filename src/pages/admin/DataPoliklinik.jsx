@@ -53,12 +53,14 @@ const DataPoliklinik = () =>{
                                     </Col>
                                     <Col className="mt-3 text-center mt-3">
                                     <button class="btnDataDokter btn btnpad"  onClick={() => navigate(DATA_POLI)}>Lihat data</button>
-                                    <h4 className="prog">13/20 kuota terisi</h4>
+                                    <h4 className="prog">
+                                    13/20 kuota terisi</h4>
                                     </Col>
                                 </Row>
                                 </Card>
                             </Col>
                             
+
                             <Col sm={6}>
                                 <Card className="card2 content mt-3">
                                 <Row>
@@ -67,7 +69,8 @@ const DataPoliklinik = () =>{
                                         <h6 className="text mt-2 mb-5">dr.Anisah Amalia, Sp.P.Rad</h6>
                                     </Col>
                                     <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad" onClick={() => navigate(DATA_POLI)}>Lihat data</button>
+                                    <button class="btnDataDokter btn btnpad" 
+                                    onClick={() => navigate(DATA_POLI)}>Lihat data</button>
                                     <h4 className="prog prog3">7/20 kuota terisi</h4>
                                     </Col>
                                 </Row>

@@ -2,7 +2,7 @@ import AdminLayout from "../../components/AdminLayout";
 import { Container, Card, Row, Navbar, Nav, Col, Form, Button} from "react-bootstrap";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
 import { ADMIN_DASHBOARD, DATA_POLIKLINIK, DATA_POLI, DATA_PASIEN, EDIT_RIWAYAT} from "../../router";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 
 import "../../styles/admin.css";
@@ -11,6 +11,7 @@ import male from "../../assets/images/male.png";
 
 const RiwayatPasien= () =>{
     const navigate = useNavigate();
+    const { id } = useParams();
     const [riwayat, setRiwayat] = useState({
         jenis_kunjungan: "riwayat jalan",
         tanggal_kunjungan: "27/05/2022",

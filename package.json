@@ -24,6 +24,7 @@
     "react-router-dom": "^6.4.5",
     "react-router-use-history": "^1.0.0",
     "react-scripts": "5.0.1",
+    "react-to-print": "^2.14.11",
     "uid": "^2.0.1",
     "web-vitals": "^2.1.4"
   },

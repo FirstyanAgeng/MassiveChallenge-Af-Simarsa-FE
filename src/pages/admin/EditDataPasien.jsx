@@ -2,7 +2,7 @@ import AdminLayout from "../../components/AdminLayout";
 import { Container, Card, Row, Navbar, Nav, Col, Form, Tabs, Button, Tab} from "react-bootstrap";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
 import { ADMIN_DASHBOARD, DATA_POLIKLINIK, DATA_POLI, RIWAYAT_PASIEN, DATA_PASIEN} from "../../router";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -13,7 +13,7 @@ import male from "../../assets/images/male.png";
 
 const EditDataPasien= () => {
     const navigate = useNavigate();
-
+    const { id } = useParams();
     const [pasien, setPasien] = useState({
         name: "",
         nik: "",
@@ -33,22 +33,22 @@ const EditDataPasien= () => {
         }, []);
   
       const getDatapasienById = async () => {
-          const response = await axios.get("http://localhost:5100/pasien/6");
+          const response = await axios.get(`http://localhost:5100/pasien/${id}`);
           setPasien(response.data);
         };
   
         const updatePasien = async (e) => {
           e.preventDefault();
           try {
-            await axios.patch("http://localhost:5100/pasien/6", {
+            await axios.patch(`http://localhost:5100/pasien/${id}`, {
               name: pasien.name,
               nik: pasien.nik,
               nrk: pasien.nrk,
               jenis_kelamin: pasien.jenis_kelamin,
               telp: pasien.telp
             });
-            navigate(DATA_PASIEN);
-          } catch (error) {
+            navigate(`/data-pasien/${pasien.id}`);
+        } catch (error) {
             console.log(error);
           }
         };
@@ -126,7 +126,9 @@ const EditDataPasien= () => {
                         onChange={handleChange}
                         name="telp"/>
                         </Form.Group>
-                        <Button className="km2" type="submit">Simpan</Button>
+                        <Button className="km2" type="submit">
+                        Simpan
+                        </Button>
                         </Form>
 
                         </Tab>
