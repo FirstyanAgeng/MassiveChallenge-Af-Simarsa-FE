@@ -31,9 +31,11 @@ const KartuAntrian = () =>{
 
     return(
         <div className="kartuAntrian pageAntrian"
-        ref={componentRef}
         >
             <Container className="cont9 text-center">
+          <div className="cetak text-center"
+                  ref={componentRef}
+          >
             <p className="t9 bold">
                 KARTU ANTRIAN
             </p>
@@ -115,6 +117,8 @@ const KartuAntrian = () =>{
             </Card.Body>
             </Card>
 
+          </div>
+
             <Row className="text-center mt-2">
               <Col sm={6}>
                 <button className="btn btn9" onClick={() => navigate(ADMIN_DASHBOARD)}
@@ -125,12 +129,8 @@ const KartuAntrian = () =>{
                 onClick={handlePrint}
                 >Print</button>
               </Col>
-
             </Row>
             </Container>
-
-
-            
         </div>
     );
 };
