@@ -111,7 +111,9 @@ p {
 }
 
 .deskripsi {
-  font-family: "Work Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  margin-top: 20px;
+  font-size: 38px;
 }
 
 .tombol-submit {
@@ -139,17 +141,19 @@ p {
 
 .tentang-content {
   background-color: var(--secondary-color);
+  width: 90%;
+  margin-top: 40px;
 }
 
 .tentangKami {
-  height: 145vh;
   margin-bottom: 10rem;
 }
 
 .logoRs {
-  width: 408px;
-  height: 541px;
+  width: 380px;
+  /* height: 541px; */
   margin-top: 40px;
+  margin-left: 40px;
 }
 
 .fasilitas {

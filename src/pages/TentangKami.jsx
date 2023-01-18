@@ -15,34 +15,34 @@ const TentangKami = () => {
             </Container>
           </Card.ImgOverlay>
         </Card>
-        <div className="my-5 tentang-content h-80 p-2 mx-5 ">
-          <Container>
-            <Row className="my-5 mx-2">
-              <Col xs="5">
+
+          <Container className="tentang-content">
+            <Row>
+              <Col>
                 <img src={logoRs} alt="logo" className="logoRs" />
               </Col>
-              <Col xs="6">
-                <h3 className="text-center">
+              <Col className="me-5 mb-4">
+                <h3 className="text-center" style={{fontSize:"18px", paddingTop:"20px"}}>
                   SELAMAT DATANG DI RUMAH SAKIT BUNDA PURWOKERTO
                 </h3>
-                <h2 className="deskripsi text-center">
+                <h2 className="deskripsi text-center mb-4">
                   Sejarah Rumah Sakit Bunda Purwokerto
                 </h2>
-                <p>
+                <p style={{textAlign:"justify"}}>
                   Rumah Sakit Bunda Purwokerto merupakan Rumah sakit swasta di
                   bawah naungan Yayasan Bunda Purwokerto. Di bangun sejak 09
                   Agustus 1989 dan beroperasi sebagai Rumah Bersalin pada 14
                   juni 1990 yang diresmikan oleh Bapak Kepala Kandep Kesehatan
                   Banyumas (Bapak dr. Koentoro)
                 </p>
-                <p>
+                <p style={{textAlign:"justify"}}>
                   Seiring berjalannya waktu RB tersebut terus berkembang dengan
                   meningkatnya statsu RB tersebut kearah yang lebih besar. Pada
                   tanggal 1 September 1991 status Rumah Bersalin “BUNDA” berubah
                   dan meningkat menjadi Rumah Sakit Khusus Ibu dan Anak “BUNDA”
                   yang operasioanalnya membawahi persalinan.
                 </p>
-                <p>
+                <p style={{textAlign:"justify"}}>
                   Saat ini Rumah sakit Bunda Purwokerto memiliki lahan seluas
                   4.396 m² dengan luas bangunan 3.920 m², dan telah ditetapkan
                   sebagai Rumah Sakit Umum / RSU Tipe D.Untuk kesiapan mutu dan
@@ -55,7 +55,7 @@ const TentangKami = () => {
               </Col>
             </Row>
           </Container>
-        </div>
+
       </div>
     </Layout>
   );
