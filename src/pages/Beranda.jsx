@@ -97,14 +97,14 @@ const Beranda = () => {
               </Card.Body>
                 <Button style={{width:"100%", borderRadius:"0"}}>Lihat Jadwal Praktik</Button>
             </Card>
-
-            <Card className="isi-kartu me-5">
+            
+            <Card className="isi-kartu ms-5">
               <Card.Img src={dokter6}/>
               <Card.Body> 
                 <Card.Text className="text-center" style={{fontSize: "15px", fontWeight:"normal"}}>
                 dr. Tiara Nurlita Sari, Sp.A
                 </Card.Text>
-                  <p className="fw-bold ms-2" style={{fontSize: "18px"}}>SPESIALIS ANAK</p>
+                  <p className="fw-bold ms-2" style={{fontSize: "18px"}}>SPESIALIS ANAK</p><br/>
 
               </Card.Body>
                 <Button style={{width:"100%", borderRadius:"0"}}>Lihat Jadwal Praktik</Button>
