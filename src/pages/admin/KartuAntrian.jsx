@@ -33,7 +33,7 @@ const KartuAntrian = () =>{
         <div className="kartuAntrian pageAntrian"
         >
             <Container className="cont9 text-center">
-          <div className="cetak text-center"
+          <div className="cont9 text-center"
                   ref={componentRef}
           >
             <p className="t9 bold">
