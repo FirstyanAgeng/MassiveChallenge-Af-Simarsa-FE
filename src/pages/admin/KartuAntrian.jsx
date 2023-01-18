@@ -17,21 +17,20 @@ const KartuAntrian = () => {
     documentTitle: "kartu-antrian",
     onAfterPrint: () => alert("Kartu Berhasil di Print"),
   });
-  // useEffect(() => {
-  //   getPasienById();
-  // }, []);
-  // const getPasienById = async () => {
 
-  //   setPasien(response.data);
-  // };
+  // (async () => {
+  //   if (id !== undefined) {
+  //     const { data } = await axios.get(`http://localhost:5100/pasien/${id}`);
+  //     setPasien(data);
+  //   }
+  // })();
 
-  (async () => {
-    if (id !== undefined) {
-      const { data } = await axios.get(`http://localhost:5100/pasien/${id}`);
-      setPasien(data);
-      console.log(data);
-    }
-  })();
+  useEffect(() => {
+    axios.get(`http://localhost:5100/pasien/${id}`).then((res) => {
+      setPasien(res.data);
+      console.log(res.data);
+    });
+  }, []);
 
   return (
     <div className="pageAntrian">
