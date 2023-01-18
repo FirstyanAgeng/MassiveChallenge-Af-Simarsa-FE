@@ -76,7 +76,7 @@ const NavigasiBar = () => {
                 Artikel
               </NavLink>
             </Nav>
-            <button className="tombol-nav" onClick={() => navigate(LOGIN)}>
+            <button className="tombol-nav fw-bold" onClick={() => navigate(LOGIN)}>
               LOGIN
             </button>
           </Navbar.Collapse>
