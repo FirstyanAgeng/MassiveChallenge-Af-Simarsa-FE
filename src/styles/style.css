@@ -164,7 +164,10 @@ p {
 .isi-kartu {
   background-color: #bfd2f8;
   color: #1f2b6c;
+  width: 17rem;
+  padding: 0;
 }
+
 
 .isi-kartu2 {
   background-color: #ffffff;
@@ -175,6 +178,10 @@ p {
 
 .Layanan {
   background-color: #a7c6fc;
+}
+
+.page-layanan{
+  padding-left: 50px;
 }
 
 .kartu-layanan {
@@ -288,4 +295,11 @@ footer p {
     #e5e4e8 5%,
     rgba(235, 234, 239, 0) 10%
   );
+}
+
+.link{
+  text-decoration: none;
+  color: #159EEC;
+  text-align: center;
+  padding-top: 30px;
 }

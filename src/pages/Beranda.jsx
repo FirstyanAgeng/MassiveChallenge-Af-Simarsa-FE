@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Row, Col, Container, Card } from "react-bootstrap";
-import { DOKTER, ABOUT } from "../router";
+import { Row, Col, Container, Card, Button } from "react-bootstrap";
+import { ABOUT } from "../router";
 import { Link } from "react-router-dom";
-import Layanan1 from "../assets/images/layanan1.png";
 import Arrow from "../assets/images/arrow.png";
-import Dok from "../assets/images/dok1.png";
+import dokter1 from "../assets/images/dokter1.png"
+import dokter6 from "../assets/images/dokter6.png"
+import layanan from "../assets/images/layananhome.png"
 import Layout from "../components/Layout";
 
 const Beranda = () => {
@@ -19,7 +20,7 @@ const Beranda = () => {
       <div className="beranda-content">
         <Container>
           <h2 className="pt-5">Sejarah Rumah Sakit Bunda</h2>
-          <p>
+          <p className="pt-3 ">
             Rumah Sakit Bunda Purwokerto merupakan Rumah sakit swasta di bawah
             naungan Yayasan Bunda Purwokerto. Di bangun sejak 09 Agustus 1989
             dan beroperasi sebagai Rumah Bersalin pada 14 juni 1990 yang
@@ -27,22 +28,23 @@ const Beranda = () => {
             Koentoro)
           </p>
           <p>
-            <Link to={ABOUT}>
+            <Link to={ABOUT} className="link">
               Baca Selengkapnya
               <img
                 src={Arrow}
                 alt=""
-                style={{ width: "10px", height: "10px" }}
+                style={{ width: "10px", height: "10px", marginLeft:"5px"}
+              }
               />
             </Link>
           </p>
         </Container>
       </div>
-      <div className="beranda-layanan container mb-5 pb-5">
+      <div className="beranda-layanan container mb-5 pb-3">
         <h2 className="text-center p-5 judul">Layanan</h2>
         <Container>
           <Row className="container my-5">
-            <Col xs="7">
+            <Col xs="7" className="page-layanan">
               <h3>Layanan Unggulan Kandungan</h3>
               <ul className="list pt-3">
                 <li>
@@ -62,61 +64,65 @@ const Beranda = () => {
               </ul>
             </Col>
             <Col xs="5">
-              <img src={Layanan1} style={{ width: "400px", height: "220px" }} />
+              <img src={layanan} style={{ width: "380px", height: "220px" }} />
             </Col>
-          </Row>
-        </Container>
-      </div>
-      <div className="beranda-jadwal pb-5">
-        <Container>
-          <h2 className="pt-5 text-center">Jadwal Dokter</h2>
-          <Row className="justify-content-center mt-5">
-            <Card style={{ width: "17rem" }} className="isi-kartu me-5">
-              <Card.Img variant="top" src={Dok} />
-              <Card.Body>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
 
-                <Link to={DOKTER}>
-                  Lihat Jadwal Praktik
-                  <img
-                    src={Arrow}
-                    alt=""
-                    style={{ width: "10px", height: "10px" }}
-                  />
-                </Link>
-              </Card.Body>
-            </Card>
-
-            <Card style={{ width: "18rem" }} className="isi-kartu ms-5">
-              <Card.Img variant="top" src={Dok} />
-              <Card.Body>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <div className="">
-                  <Link to={DOKTER}>
-                    Lihat Jadwal Praktik
-                    <img
-                      src={Arrow}
-                      alt=""
-                      style={{ width: "10px", height: "10px" }}
-                    />
-                  </Link>
-                </div>
-              </Card.Body>
-            </Card>
-            <Link to={DOKTER} className="text-center mt-3">
+          <p className="link">
+            <Link to={ABOUT} className="link">
               Selengkapnya
               <img
                 src={Arrow}
                 alt=""
-                style={{ width: "10px", height: "10px" }}
+                style={{ width: "10px", height: "10px", marginLeft:"5px"}
+              }
               />
             </Link>
+          </p>
+          </Row>
+        </Container>
+      </div>
+
+      <div className="beranda-jadwal pb-6">
+        <Container>
+          <h2 className="pt-5 text-center">Jadwal Dokter</h2>
+          <Row className="justify-content-center mt-5">
+            <Card className="isi-kartu me-5">
+              <Card.Img src={dokter1}/>
+              <Card.Body> 
+                <Card.Text className="text-center" style={{fontSize: "15px", fontWeight:"normal"}}>
+                dr. Anton Prihandana, SpOG
+                </Card.Text>
+                  <p className="fw-bold ms-2" style={{fontSize: "18px"}}>SPESIALIS OBSETRI  & GINEKOLOGI</p>
+
+              </Card.Body>
+                <Button style={{width:"100%", borderRadius:"0"}}>Lihat Jadwal Praktik</Button>
+            </Card>
+
+            <Card className="isi-kartu me-5">
+              <Card.Img src={dokter6}/>
+              <Card.Body> 
+                <Card.Text className="text-center" style={{fontSize: "15px", fontWeight:"normal"}}>
+                dr. Tiara Nurlita Sari, Sp.A
+                </Card.Text>
+                  <p className="fw-bold ms-2" style={{fontSize: "18px"}}>SPESIALIS ANAK</p>
+
+              </Card.Body>
+                <Button style={{width:"100%", borderRadius:"0"}}>Lihat Jadwal Praktik</Button>
+            </Card>
+
+
+            
+            <p className="link">
+            <Link to={ABOUT} className="link">
+              Selengkapnya
+              <img
+                src={Arrow}
+                alt=""
+                style={{ width: "10px", height: "10px", marginLeft:"5px"}
+              }
+              />
+            </Link>
+          </p>
           </Row>
         </Container>
       </div>
