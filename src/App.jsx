@@ -4,7 +4,7 @@ import Beranda from "./pages/Beranda";
 import TentangKami from "./pages/TentangKami";
 import Layanan from "./pages/Layanan";
 import Artikel from "./pages/Artikel";
-import DetailArtikel from "./pages/DetailAritkel";
+import DetailArtikel from "./pages/DetailArtikel";
 import Karir from "./pages/Karir";
 import DaftarDokter from "./pages/JadwalDokter";
 import Pendaftaran from "./pages/Pendaftaran";
@@ -19,11 +19,11 @@ import RiwayatPasien from "./pages/admin/RiwayatRekamMedis";
 import DaftarPasienBaru from "./pages/admin/DaftarPasienBaru";
 import DaftarBerhasil from "./pages/admin/DaftarBerhasil";
 import KartuAntrian from "./pages/admin/KartuAntrian";
-import DaftarPasienLama from "./pages/admin/DaftarPasienLama" 
+import DaftarPasienLama from "./pages/admin/DaftarPasienLama";
 import EditDetailDokter from "./pages/admin/EditDetailDokter";
-import EditDataPasien from "./pages/admin/EditDataPasien"
-import EditRiwayat from "./pages/admin/EditRiwayat"
-import CobaPdf from "./pages/cobapdf"
+import EditDataPasien from "./pages/admin/EditDataPasien";
+import EditRiwayat from "./pages/admin/EditRiwayat";
+import CobaPdf from "./pages/cobapdf";
 
 import {
   HOME,
@@ -50,7 +50,7 @@ import {
   EDIT_DETAIL_DOKTER,
   EDIT_DATA_PASIEN,
   EDIT_RIWAYAT,
-  COBA_PDF
+  COBA_PDF,
 } from "./router";
 
 function App() {
@@ -77,15 +77,15 @@ function App() {
         <Route path={DATA_POLIKLINIK} element={<DataPoliklinik />} />
         <Route path={DATA_POLI} element={<DataPoli />} />
         <Route path={DATA_PASIEN} element={<DataPasien />} />
-        <Route path={EDIT_DATA_PASIEN} element={<EditDataPasien/>}/>
+        <Route path={EDIT_DATA_PASIEN} element={<EditDataPasien />} />
         <Route path={RIWAYAT_PASIEN} element={<RiwayatPasien />} />
-        <Route path={EDIT_RIWAYAT} element={<EditRiwayat/>}/>
+        <Route path={EDIT_RIWAYAT} element={<EditRiwayat />} />
         <Route path={DAFTAR_PASIEN_BARU} element={<DaftarPasienBaru />} />
         <Route path={DAFTAR_BERHASIL} element={<DaftarBerhasil />} />
         <Route path={KARTU_ANTRIAN} element={<KartuAntrian />} />
         <Route path={DAFTAR_PASIEN_LAMA} element={<DaftarPasienLama />} />
-        <Route path={DAFTAR_PASIEN_LAMA} element={<DaftarPasienLama/>}/>
-        <Route path={COBA_PDF} element={<CobaPdf/>}/>
+        <Route path={DAFTAR_PASIEN_LAMA} element={<DaftarPasienLama />} />
+        <Route path={COBA_PDF} element={<CobaPdf />} />
         <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
       </Routes>
     </>

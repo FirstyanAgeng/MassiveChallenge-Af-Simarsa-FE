@@ -21,7 +21,10 @@ const HubungiKami = () => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:5100/saran", {
-        name, email, subjek, pesan
+        name,
+        email,
+        subjek,
+        pesan,
       });
       navigate("/");
     } catch (error) {
@@ -44,7 +47,7 @@ const HubungiKami = () => {
           <div className="mt-5 text-center">
             {/* Google Maps */}
             <iframe
-              title="This is a unique title"
+              title="map rs bunda"
               style={{ width: "100%", height: "400px" }}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.326885766876!2d109.2513220147758!3d-7.429031694640239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655e9a29d91be7%3A0x30e5e61e7afd3ed2!2sRumah%20Sakit%20Umum%20Bunda!5e0!3m2!1sid!2sid!4v1671007682338!5m2!1sid!2sid"
             ></iframe>
@@ -60,12 +63,12 @@ const HubungiKami = () => {
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Nama</Form.Label>
-                    <Form.Control 
-                    type="text" 
-                    placeholder="masukkan nama"
-                    value={name} 
-                    onChange={(e) => setName(e.target.value)}
-                    required
+                    <Form.Control
+                      type="text"
+                      placeholder="masukkan nama"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
                     />
                   </Form.Group>
 
@@ -74,12 +77,12 @@ const HubungiKami = () => {
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Email</Form.Label>
-                    <Form.Control 
-                    type="email" 
-                    placeholder="masukkan email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
+                    <Form.Control
+                      type="email"
+                      placeholder="masukkan email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
                     />
                   </Form.Group>
                   <Form.Group
@@ -87,12 +90,12 @@ const HubungiKami = () => {
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Subjek</Form.Label>
-                    <Form.Control 
-                    type="text" 
-                    placeholder="masukkan subjek"
-                    value={subjek}
-                    onChange={(e) => setSubjek(e.target.value)}
-                    required
+                    <Form.Control
+                      type="text"
+                      placeholder="masukkan subjek"
+                      value={subjek}
+                      onChange={(e) => setSubjek(e.target.value)}
+                      required
                     />
                   </Form.Group>
 
@@ -101,14 +104,17 @@ const HubungiKami = () => {
                     controlId="exampleForm.ControlTextarea1"
                   >
                     <Form.Label>Pesan</Form.Label>
-                    <Form.Control 
-                    as="textarea" rows={3} 
-                    placeholder="masukkan pesan anda"
-                    value={pesan}
-                    onChange={(e) => setPesan(e.target.value)}
+                    <Form.Control
+                      as="textarea"
+                      rows={3}
+                      placeholder="masukkan pesan anda"
+                      value={pesan}
+                      onChange={(e) => setPesan(e.target.value)}
                     />
                   </Form.Group>
-                <button class="tombol-kirim" type="submit">SUBMIT</button>
+                  <button class="tombol-kirim" type="submit">
+                    SUBMIT
+                  </button>
                 </Form>
               </Col>
               {/* 2 */}
