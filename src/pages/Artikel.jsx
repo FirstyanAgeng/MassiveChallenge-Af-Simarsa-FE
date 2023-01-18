@@ -122,9 +122,10 @@ const Artikel = () => {
                   <Card.Img variant="top" src={PicArtikel5} />
                   <Card.Body>
                     <Card.Text className="desk-card">
-                      <h3>Bahaya Stress pada Ibu Hamil</h3>
-                      Saat menjalani masa masa kehamilan tentunya akan banyak
-                      perubahan yang akan mungkin dialami oleh ibu Hamil...
+                      <h3>Karbohidrat Kompleks</h3>
+                      Karbohidrat komplek merupakan jenis karbohidrat yang
+                      diketahui lebih sehat dan bergizi, sehingga memiliki
+                      banyak manfaat
                     </Card.Text>
                     <Link to={DETAIL_ARTIKEL}>Selengkapnya</Link>
                   </Card.Body>
@@ -140,9 +141,11 @@ const Artikel = () => {
                   <Card.Img variant="top" src={PicArtikel6} />
                   <Card.Body>
                     <Card.Text className="desk-card">
-                      <h3>Bahaya Stress pada Ibu Hamil</h3>
-                      Saat menjalani masa masa kehamilan tentunya akan banyak
-                      perubahan yang akan mungkin dialami oleh ibu Hamil...
+                      <h3>
+                        Ibu, Kenali Penyebab Janin Cegukan dalam Kandungan
+                      </h3>
+                      Selain menendang, berguling, dan menonjol, ibu hamil juga
+                      dapat merasakan janin saat bergerak...
                     </Card.Text>
                     <Link to={DETAIL_ARTIKEL}>Selengkapnya</Link>
                   </Card.Body>
@@ -159,7 +162,7 @@ const Artikel = () => {
                     <Card.Text className="desk-card">
                       <h3>Bahaya Stress pada Ibu Hamil</h3>
                       Saat menjalani masa masa kehamilan tentunya akan banyak
-                      perubahan yang akan mungkin dialami oleh ibu Hamil...
+                      perubahan yang akan mungkin dialami oleh..
                     </Card.Text>
                     <Link to={DETAIL_ARTIKEL}>Selengkapnya</Link>
                   </Card.Body>
@@ -174,9 +177,13 @@ const Artikel = () => {
                   <Card.Img variant="top" src={PicArtikel8} />
                   <Card.Body>
                     <Card.Text className="desk-card">
-                      <h3>Bahaya Stress pada Ibu Hamil</h3>
-                      Saat menjalani masa masa kehamilan tentunya akan banyak
-                      perubahan yang akan mungkin dialami oleh...
+                      <h3>
+                        Ketahui Obat Alami untuk Mengatasi Keracunan Makanan
+                      </h3>
+                      <p>
+                        Mengonsumsi makanan dan minuman sembarangan, tanpa
+                        memerhatikan
+                      </p>
                     </Card.Text>
                     <Link to={DETAIL_ARTIKEL}>Selengkapnya</Link>
                   </Card.Body>

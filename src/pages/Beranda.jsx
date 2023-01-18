@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Row, Col, Container, Card } from "react-bootstrap";
-import { DOKTER, ABOUT } from "../router";
+import { DOKTER, ABOUT, LAYANAN } from "../router";
 import { Link } from "react-router-dom";
 import Layanan1 from "../assets/images/layanan1.png";
 import Arrow from "../assets/images/arrow.png";
@@ -31,7 +31,7 @@ const Beranda = () => {
               </p>
               <p>
                 <Link to={ABOUT}>
-                  Baca Selengkapnya
+                  Selengkapnya
                   <img
                     src={Arrow}
                     alt=""
@@ -70,6 +70,16 @@ const Beranda = () => {
               <img src={Layanan1} style={{ width: "400px", height: "220px" }} />
             </Col>
           </Row>
+          <p className="text-center">
+            <Link to={LAYANAN}>
+              Selengkapnya
+              <img
+                src={Arrow}
+                alt=""
+                style={{ width: "10px", height: "10px" }}
+              />
+            </Link>
+          </p>
         </Container>
       </div>
       <div className="beranda-jadwal pb-5">
@@ -123,6 +133,16 @@ const Beranda = () => {
               </Card>
             </Col>
           </Row>
+          <p className="text-center">
+            <Link to={DOKTER}>
+              Selengkapnya
+              <img
+                src={Arrow}
+                alt=""
+                style={{ width: "10px", height: "10px" }}
+              />
+            </Link>
+          </p>
         </Container>
       </div>
     </Layout>

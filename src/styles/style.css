@@ -153,7 +153,7 @@ p {
 .logoRs {
   width: 380px;
   /* height: 541px; */
-  margin-top: 40px;
+  margin-top: 100px;
   margin-left: 40px;
 }
 
@@ -175,6 +175,10 @@ p {
 .isi-kartu2 {
   background-color: #ffffff;
   color: #000000;
+}
+
+.modal-jadwal {
+  color: var(--primary-color);
 }
 
 /* LAYANAN */
@@ -300,13 +304,17 @@ footer {
   border-radius: 20px;
 }
 
-footer h1 {
-  font-size: large;
-  font-weight: bold;
+footer h3 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fcfefe;
 }
 
 footer p {
-  font-size: medium;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .hubungi {
@@ -314,7 +322,9 @@ footer p {
 }
 
 .background-filter {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+  text-shadow: 2px 2px #ecf5f8;
+  /* background: rgba(255, 255, 255, 0.7); */
 }
 
 .background-filter2 {

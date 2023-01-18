@@ -1,7 +1,7 @@
 /* font poppins */
-@font-face{
+@font-face {
   font-family: "poppins";
-  src: url('../../font/Poppins-Medium.ttf');
+  src: url("../../font/Poppins-Medium.ttf");
 }
 
 /* menu login */
@@ -12,12 +12,12 @@
   margin: 30px 100px 30px 120px;
 }
 
-.log{
-    text-align: center;
-    color: #0957DE;
-    font-size: 35px;
-    font-family: poppins;
-    padding-bottom: 10px;
+.log {
+  text-align: center;
+  color: #0957de;
+  font-size: 35px;
+  font-family: poppins;
+  padding-bottom: 10px;
 }
 
 /* admin-nav */
@@ -49,7 +49,7 @@
   width: 1300px;
 }
 
-.titleHome{
+.titleHome {
   font-size: 2.2vw;
   font-weight: 500;
   color: #0957de;
@@ -70,18 +70,18 @@
   font-family: poppins;
 }
 
-.cont{
-    width: 1100px;
-    margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 50px;
-  }
+.cont {
+  width: 1100px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
 
-.pendaftaran{
+.pendaftaran {
   padding: 10px 40px;
 }
 
-.card-title{
+.card-title {
   font-weight: bold;
   font-size: 2vw;
   font-family: poppins;
@@ -107,11 +107,11 @@
   color: #0957de;
 }
 
-.text-btn{
+.text-btn {
   font-size: 20px;
 }
 
-.btn1{
+.btn1 {
   background-color: rgb(0, 202, 202);
   border-color: rgb(0, 202, 202);
   margin: auto;
@@ -128,20 +128,20 @@
   color: rgb(0, 202, 202);
 }
 
-.datapol-dok{
+.datapol-dok {
   margin-left: 30px;
 }
 
-.data-poliklinik{
+.data-poliklinik {
   height: 260px;
   padding: 10px;
 }
 
-.datapol-dok{
+.datapol-dok {
   margin-left: 30px;
 }
 
-.data-poliklinik{
+.data-poliklinik {
   height: 260px;
   padding: 10px;
 }
@@ -154,26 +154,24 @@
   max-height: 500px;
 }
 
-.card-datapoli{
+.card-datapoli {
   padding: auto;
 }
 
-.center{
+.center {
   padding-top: 60px;
   text-align: center;
 }
 
-.font-datapoli{
+.font-datapoli {
   font-family: poppins;
   font-size: 23px;
 }
 
-
-.font-datapoli{
+.font-datapoli {
   font-family: poppins;
   font-size: 23px;
 }
-
 
 .nv {
   display: inline-block;
@@ -201,7 +199,7 @@
   border: #4186eb;
 }
 
-.btn2:hover{
+.btn2:hover {
   background-color: white;
   border-color: rgb(165, 165, 165);
   color: rgb(165, 165, 165);
@@ -215,14 +213,14 @@
   padding: 5px 30px;
 }
 
-.container-dataDokter{
+.container-dataDokter {
   width: 1000px;
   margin-top: 20px;
   padding-top: 10px;
   padding-bottom: 50px;
 }
 
-.container-dataDokter{
+.container-dataDokter {
   width: 1000px;
   margin-top: 20px;
   padding-top: 10px;
@@ -238,10 +236,10 @@
   box-shadow: 1px 3px 3px rgba(124, 124, 124, 0.5);
 }
 
-.tambah{
+.tambah {
   margin: 0 4px 2px 0;
 }
-.content{
+.content {
   margin: auto;
   margin-top: 50px;
   width: 650px;
@@ -264,13 +262,12 @@
   border-radius: 15px;
   box-shadow: 1px 3px 3px rgba(124, 124, 124, 0.5);
 }
-.btnpad{
+.btnpad {
   padding: 10px 40px;
 }
 
-
 /* detail dokter */
-.pageJadwalPraktik{
+.pageJadwalPraktik {
   /* background-color: whitesmoke; */
   width: 1050px;
 }
@@ -291,38 +288,38 @@
   box-shadow: 1px 3px 3px rgba(124, 124, 124, 0.5);
 }
 
-.cardf{
+.cardf {
   width: 200px;
   margin: 50px auto 0 auto;
 }
 
-.title-Detaildokter{
+.title-Detaildokter {
   margin: 10px 0 48px 50px;
 }
 
-.title-Detailpasien{
+.title-Detailpasien {
   margin: 10px 0 10px 20px;
 }
 
-.card-fotoDokter{
+.card-fotoDokter {
   margin: 0 0 30px 48px;
   width: 330px;
   height: 550px;
 }
 
-.nama-dokter{
-  color: #0957DE;
+.nama-dokter {
+  color: #0957de;
   font-size: 20px;
   font-family: poppins;
   margin: 10px 30px;
 }
-.jadwal-dokter{
+.jadwal-dokter {
   font-size: 20px;
-  color: #9B9B9B;
+  color: #9b9b9b;
 }
-.telp-dokter{
+.telp-dokter {
   font-size: 20px;
-  color: #C4C3C3;
+  color: #c4c3c3;
 }
 .category {
   background-color: #09c2de;
@@ -334,21 +331,22 @@
   font-size: 20px;
 }
 
-.shield-detaildokter{
+.shield-detaildokter {
   margin-bottom: 2px;
   margin-right: 5px;
 }
 
-.edit{
+.edit {
   margin: 0 5px 5px 0;
   color: white;
 }
-.edit:hover{
+.edit:hover {
   margin: 0 5px 5px 0;
-  color: #0957DE;
+  color: #0957de;
 }
 
-.km, .km2{
+.km,
+.km2 {
   font-size: 20px;
   background-color: #09c2de;
   color: white;
@@ -358,7 +356,7 @@
   padding: 10px 0;
 }
 
-.c1{
+.c1 {
   font-size: x-large;
   margin-left: 60px;
 }
@@ -366,30 +364,30 @@
   margin: 0 10px;
 }
 
-.container-tab-data-dokter{
+.container-tab-data-dokter {
   color: black;
   margin: 10px 0 30px 20px;
 }
 
-.km2{
-  background-color: #0957DE;
+.km2 {
+  background-color: #0957de;
 }
 .km2:hover {
   background-color: white;
-  color: #0957DE;
-  border-color: #0957DE;
+  color: #0957de;
+  border-color: #0957de;
 }
-.btn-dataDokter{
+.btn-dataDokter {
   text-decoration: none;
   color: white;
 }
 
 /* data poliklinik */
 
-.list-data-antrian{
+.list-data-antrian {
   font-size: 8px;
 }
-.card2{
+.card2 {
   margin: auto;
   padding: 10px 20px;
   width: 400px;
@@ -427,26 +425,26 @@
 .sed1 {
   background-color: #0957de;
   font-weight: bold;
-  border-radius:5px;
+  border-radius: 5px;
   padding: 2px 20px;
   margin-right: 10px;
 }
-.sed1:hover{
+.sed1:hover {
   background-color: white;
-  color: #0957DE;
+  color: #0957de;
   font-weight: bold;
   padding: 2px 20px;
 }
-.sed2{
-    background-color: #FF795C;
-    font-weight: bold;
-    padding: 2px 15px;
-    border-radius:5px;
-    margin-left: 0;
+.sed2 {
+  background-color: #ff795c;
+  font-weight: bold;
+  padding: 2px 15px;
+  border-radius: 5px;
+  margin-left: 0;
 }
-.sed2:hover{
+.sed2:hover {
   background-color: white;
-  color: #FF795C;
+  color: #ff795c;
   font-weight: bold;
   padding: 2px 15px;
 }
@@ -471,18 +469,18 @@
   color: #c4c3c3;
 }
 
-.container-nav-home{
+.container-nav-home {
   width: 87%;
   margin: auto;
   margin-left: 88px;
   margin-top: 10px;
 }
 
-.title-dataDokter{
+.title-dataDokter {
   margin-left: 35px;
   font-size: 23px;
 }
-.button-tambahDokter{
+.button-tambahDokter {
   border-radius: 5px;
   color: white;
   font-size: 16px;
@@ -494,17 +492,16 @@
 }
 .button-tambahDokter:hover {
   background-color: white;
-  color: #0957DE;
+  color: #0957de;
 }
 
-.ho{
+.ho {
   margin-top: 7px;
   color: #c4c3c3;
 }
 .ho1 {
   margin-top: 13px;
 }
-
 
 /* data pasien */
 .containerDataPasien a {
@@ -525,12 +522,12 @@
   border-radius: 15px;
   box-shadow: 1px 3px 3px rgba(124, 124, 124, 0.5);
 }
-.imgPasien{
+.imgPasien {
   margin: 40px 0 0 40px;
   width: 240px;
 }
 
-.sd{
+.sd {
   width: 170px;
 }
 .sd1 {
@@ -635,10 +632,7 @@
 }
 
 /* kartu antrian */
-.cardAntrian {
-  width: 526px;
-  height: 503px;
-}
+
 .pageAntrian {
   background-image: url("../assets/images/bgantrian.png");
   height: 100%;
@@ -651,9 +645,8 @@
   margin-bottom: 80px;
   width: 450px;
 }
-
-.t9{
-  color: #0957DE;
+.t9 {
+  color: #0957de;
   font-size: 28px;
 }
 .cardAntrian {
@@ -665,6 +658,8 @@
   color: white;
   font-weight: bold;
   border-radius: 10px 10px 0 0;
+  text-align: center;
+  padding: 20px;
 }
 .content9 {
   border-style: groove;
@@ -673,6 +668,7 @@
   border-radius: 5px;
   margin: 0;
   margin-top: 0;
+  text-align: center;
 }
 .idl {
   font-size: 28px;
@@ -702,9 +698,10 @@
   border-color: #0957de;
   border-width: thin;
   border-radius: 5px;
-  width: 180px;
+  width: 100%;
   margin: 15px 8px 0px 15px;
   padding: 0;
+  text-align: center;
 }
 .btn-home {
   background-color: #70a4fd;

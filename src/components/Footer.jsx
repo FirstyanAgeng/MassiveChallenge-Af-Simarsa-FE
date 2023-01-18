@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Logos from "../assets/images/logo-simarsa-2nd.png";
-import Fb from "../assets/images/fb.png";
-import Ig from "../assets/images/ig.png";
+import Fb from "../assets/images/icon-fb.png";
+import Ig from "../assets/images/icon-ig.png";
 
 const Footer = () => {
   return (
@@ -50,7 +50,7 @@ const Footer = () => {
                 target={"_blank"}
                 rel="noreferrer"
               >
-                <img src={Fb} alt="" className="pe-3 " />
+                <img src={Fb} alt="" className="pe-3 ms-5 " />
               </a>
               <a
                 href="https://www.instagram.com/rsbunda.pwt/?hl=id"

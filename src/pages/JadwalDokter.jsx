@@ -8,12 +8,44 @@ import dokter6 from "../assets/images/dokter2.png";
 import dokter7 from "../assets/images/dokter6.png";
 import dokter8 from "../assets/images/dokter7.png";
 import dokter9 from "../assets/images/dokter8.png";
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Card, Container, Row, Col, Modal, Button } from "react-bootstrap";
 import Layout from "../components/Layout";
+import { useState } from "react";
+import Jadwal from "../assets/images/jadwal-dokter.png";
 
 const JadwalDokter = () => {
+  const [modalShow, setModalShow] = useState(false);
+
+  function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        className="modal-jadwal"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Jadwal Dokter
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="d-flex justify-content-center text-center">
+          <img src={Jadwal} alt="" />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+
   return (
     <Layout>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       <div className="dokter">
         <Card className="text-dark">
           <Card.Img src={deskDok} alt="Card image" />
@@ -33,21 +65,22 @@ const JadwalDokter = () => {
                   <Card.Img variant="top" src={dokter1} />
                   <Card.Body>
                     <Card.Text className="text-center">
-                      <p>Dr. Anton Prihandana, Sp.OG</p>
+                      <p>dr. Anton Prihandana, Sp.OG</p>
                       <p>Spesialis Obstetri & Ginekologi</p>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Link
-                    href="#"
+                  <button
+                    onClick={() => setModalShow(true)}
                     style={{
                       backgroundColor: "#0957DE",
                       color: "#BFD2F8",
                       padding: "10px",
                       textAlign: "center",
+                      border: "none",
                     }}
                   >
                     Lihat Jadwal
-                  </Card.Link>
+                  </button>
                 </Card>
               </Col>
               {/* END */}
@@ -58,21 +91,22 @@ const JadwalDokter = () => {
                   <Card.Img variant="top" src={dokter2} height="300px" />
                   <Card.Body>
                     <Card.Text className="text-center">
-                      <p>Dr. Sutrisno, M.Kes.,Sp,OG</p>
+                      <p>dr. Sutrisno, M.Kes.,Sp,OG</p>
                       <p>Spesialis Obstetri & Ginekologi </p>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Link
-                    href="#"
+                  <button
+                    onClick={() => setModalShow(true)}
                     style={{
                       backgroundColor: "#0957DE",
                       color: "#BFD2F8",
                       padding: "10px",
                       textAlign: "center",
+                      border: "none",
                     }}
                   >
                     Lihat Jadwal
-                  </Card.Link>
+                  </button>
                 </Card>
               </Col>
               {/* END */}
@@ -83,21 +117,22 @@ const JadwalDokter = () => {
                   <Card.Img variant="top" src={dokter3} />
                   <Card.Body>
                     <Card.Text className="text-center">
-                      <p> Dr. Budi Irawan, Sp.OG </p>
+                      <p> dr. Budi Irawan, Sp.OG </p>
                       <p>Spesialis Obstetri & Ginekologi </p>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Link
-                    href="#"
+                  <button
+                    onClick={() => setModalShow(true)}
                     style={{
                       backgroundColor: "#0957DE",
                       color: "#BFD2F8",
                       padding: "10px",
                       textAlign: "center",
+                      border: "none",
                     }}
                   >
                     Lihat Jadwal
-                  </Card.Link>
+                  </button>
                 </Card>
               </Col>
               {/* END */}
@@ -109,21 +144,22 @@ const JadwalDokter = () => {
                   <Card.Img variant="top" src={dokter4} />
                   <Card.Body>
                     <Card.Text className="text-center">
-                      <p>Dr. I Gede Arianto, Sp.PD-KGEH</p>
+                      <p>dr. I Gede Arianto, Sp.PD-KGEH</p>
                       <p>SPESIALIS PENYAKIT DALAM</p>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Link
-                    href="#"
+                  <button
+                    onClick={() => setModalShow(true)}
                     style={{
                       backgroundColor: "#0957DE",
                       color: "#BFD2F8",
                       padding: "10px",
                       textAlign: "center",
+                      border: "none",
                     }}
                   >
                     Lihat Jadwal
-                  </Card.Link>
+                  </button>
                 </Card>
               </Col>
               {/* END */}
@@ -134,21 +170,22 @@ const JadwalDokter = () => {
                   <Card.Img variant="top" src={dokter5} height="300px" />
                   <Card.Body>
                     <Card.Text className="text-center">
-                      <p>Dr. Sutrisno, M.Kes.,Sp,OG</p>
+                      <p>dr. Sutrisno, M.Kes.,Sp,OG</p>
                       <p>SPESIALIS KANDUNGAN</p>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Link
-                    href="#"
+                  <button
+                    onClick={() => setModalShow(true)}
                     style={{
                       backgroundColor: "#0957DE",
                       color: "#BFD2F8",
                       padding: "10px",
                       textAlign: "center",
+                      border: "none",
                     }}
                   >
                     Lihat Jadwal
-                  </Card.Link>
+                  </button>
                 </Card>
               </Col>
               {/* END */}
@@ -159,21 +196,22 @@ const JadwalDokter = () => {
                   <Card.Img variant="top" src={dokter6} />
                   <Card.Body>
                     <Card.Text className="text-center">
-                      <p>Dr. Sutrisno, M.Kes.,Sp,OG</p>
+                      <p>dr. Sutrisno, M.Kes.,Sp,OG</p>
                       <p> Spesialis Obstetri & Ginekologi </p>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Link
-                    href="#"
+                  <button
+                    onClick={() => setModalShow(true)}
                     style={{
                       backgroundColor: "#0957DE",
                       color: "#BFD2F8",
                       padding: "10px",
                       textAlign: "center",
+                      border: "none",
                     }}
                   >
                     Lihat Jadwal
-                  </Card.Link>
+                  </button>
                 </Card>
               </Col>
               {/* END */}
@@ -185,21 +223,22 @@ const JadwalDokter = () => {
                   <Card.Img variant="top" src={dokter7} />
                   <Card.Body>
                     <Card.Text className="text-center">
-                      <p>Dr. Tiara Nurlita Sari, Sp.A</p>
+                      <p>dr. Tiara Nurlita Sari, Sp.A</p>
                       <p>SPESIALIS ANAK</p>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Link
-                    href="#"
+                  <button
+                    onClick={() => setModalShow(true)}
                     style={{
                       backgroundColor: "#0957DE",
                       color: "#BFD2F8",
                       padding: "10px",
                       textAlign: "center",
+                      border: "none",
                     }}
                   >
                     Lihat Jadwal
-                  </Card.Link>
+                  </button>
                 </Card>
               </Col>
               {/* END */}
@@ -214,17 +253,18 @@ const JadwalDokter = () => {
                       <p>SPESIALIS SARAF</p>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Link
-                    href="#"
+                  <button
+                    onClick={() => setModalShow(true)}
                     style={{
                       backgroundColor: "#0957DE",
                       color: "#BFD2F8",
                       padding: "10px",
                       textAlign: "center",
+                      border: "none",
                     }}
                   >
                     Lihat Jadwal
-                  </Card.Link>
+                  </button>
                 </Card>
               </Col>
               {/* END */}
@@ -235,21 +275,22 @@ const JadwalDokter = () => {
                   <Card.Img variant="top" src={dokter9} />
                   <Card.Body>
                     <Card.Text className="text-center">
-                      <p>Dr. Anisah Amalia, Sp Rad</p>
+                      <p>dr. Anisah Amalia, Sp Rad</p>
                       <p>SPESIALIS RADIOLOGI</p>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Link
-                    href="#"
+                  <button
+                    onClick={() => setModalShow(true)}
                     style={{
                       backgroundColor: "#0957DE",
                       color: "#BFD2F8",
                       padding: "10px",
                       textAlign: "center",
+                      border: "none",
                     }}
                   >
                     Lihat Jadwal
-                  </Card.Link>
+                  </button>
                 </Card>
               </Col>
               {/* END */}

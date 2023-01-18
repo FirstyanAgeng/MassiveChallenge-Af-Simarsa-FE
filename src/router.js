@@ -17,12 +17,12 @@ const RIWAYAT_PASIEN = "/riwayat-pasien/:id";
 const EDIT_RIWAYAT = "/riwayat-pasien/edit/:id";
 const DAFTAR_PASIEN_BARU = "/daftar-pasienbaru";
 const DAFTAR_BERHASIL = "/daftar-berhasil";
-const KARTU_ANTRIAN = "/kartu-antrian";
-const DAFTAR_PASIEN_LAMA = "/daftar-pasienlama"
-const KARIR = "/karir"
-const ARTIKEL = "/artikel"
-const DETAIL_ARTIKEL = "/detail-artikel"
-const COBA_PDF = "/coba-pdf"
+const KARTU_ANTRIAN = "/kartu-antrian/:id";
+const DAFTAR_PASIEN_LAMA = "/daftar-pasienlama";
+const KARIR = "/karir";
+const ARTIKEL = "/artikel";
+const DETAIL_ARTIKEL = "/detail-artikel";
+const COBA_PDF = "/coba-pdf";
 
 export {
   HOME,
@@ -42,12 +42,12 @@ export {
   DAFTAR_PASIEN_BARU,
   DAFTAR_BERHASIL,
   KARTU_ANTRIAN,
-  DAFTAR_PASIEN_LAMA, 
+  DAFTAR_PASIEN_LAMA,
   EDIT_DETAIL_DOKTER,
   EDIT_DATA_PASIEN,
   EDIT_RIWAYAT,
-  KARIR, 
+  KARIR,
   ARTIKEL,
   DETAIL_ARTIKEL,
-  COBA_PDF
+  COBA_PDF,
 };
