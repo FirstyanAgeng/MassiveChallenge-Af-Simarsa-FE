@@ -1,5 +1,14 @@
 import AdminLayout from "../../components/AdminLayout";
-import { Container, Card, Row, Navbar, Nav, Col, Form, Button} from "react-bootstrap";
+import {
+  Container,
+  Card,
+  Row,
+  Navbar,
+  Nav,
+  Col,
+  Form,
+  Button,
+} from "react-bootstrap";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
 import { ADMIN_DASHBOARD, DATA_POLIKLINIK, DATA_POLI, DATA_PASIEN, EDIT_RIWAYAT} from "../../router";
 import { useNavigate, useParams } from "react-router-dom";
@@ -77,10 +86,12 @@ const RiwayatPasien= () =>{
                         <Form.Select value={riwayat.jenis_kunjungan} disabled>
                         <option>Riwayat Jalan</option>
                         </Form.Select>
-                        </Form.Group>
-                        
-                        <Form.Group className="tab1 mb-3">
-                        <Form.Label className="bold">Tanggal Kunjungan</Form.Label>
+                      </Form.Group>
+
+                      <Form.Group className="tab1 mb-3">
+                        <Form.Label className="bold">
+                          Tanggal Kunjungan
+                        </Form.Label>
                         <Row>
                             <Col>
                             <Form.Control value={riwayat.tanggal_kunjungan} disabled/>
@@ -89,7 +100,7 @@ const RiwayatPasien= () =>{
                             <Form.Control value={riwayat.jam_kunjungan} disabled />
                             </Col>
                         </Row>
-                        </Form.Group>
+                      </Form.Group>
 
                         <Form.Group className="mb-3 tab1">
                             <Form.Label className="bold">Anamnesa</Form.Label>
@@ -97,8 +108,10 @@ const RiwayatPasien= () =>{
                             as="textarea" rows={4} />
                         </Form.Group>
 
-                        <Form.Group className="tab1 mb-3">
-                        <Form.Label className="bold">Riwayat Alergi Obat</Form.Label>
+                      <Form.Group className="tab1 mb-3">
+                        <Form.Label className="bold">
+                          Riwayat Alergi Obat
+                        </Form.Label>
                         <Row>
                             <Col>
                             <Form.Control value="Obat" disabled/>
@@ -107,9 +120,9 @@ const RiwayatPasien= () =>{
                             <Form.Select value={riwayat.alergiObat} disabled>
                             <option className="text-center">-- Tidak ada --</option>
                             </Form.Select>
-                            </Col>
+                          </Col>
                         </Row>
-                        </Form.Group>
+                      </Form.Group>
 
                         <Form.Group className="mb-3 tab1">
                             <Form.Label className="bold">Terapi Obat</Form.Label>
@@ -123,8 +136,10 @@ const RiwayatPasien= () =>{
                             as="textarea" rows={4} />
                         </Form.Group>
 
-                        <Form.Group className="tab1 mb-3">
-                        <Form.Label className="bold">Pemeriksaan Fisik</Form.Label>
+                      <Form.Group className="tab1 mb-3">
+                        <Form.Label className="bold">
+                          Pemeriksaan Fisik
+                        </Form.Label>
                         <Row>
                             <Col>
                             <Form.Label className="bold">Tinggi Badan (cm)</Form.Label>
@@ -135,9 +150,9 @@ const RiwayatPasien= () =>{
                             <Form.Control value={riwayat.berat_badan} disabled />
                             </Col>
                         </Row>
-                        </Form.Group>
+                      </Form.Group>
 
-                        <Form.Group className="tab1 mb-3">
+                      <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold">Tekanan Darah</Form.Label>
                         <Row>
                             <Col>
@@ -149,39 +164,34 @@ const RiwayatPasien= () =>{
                             <Form.Control value={riwayat.diastole} disabled />
                             </Col>
                         </Row>
-                        </Form.Group>
-                        <Form.Group className="tab1 mb-3">
+                      </Form.Group>
+                      <Form.Group className="tab1 mb-3">
                         <Row>
-                            <Col sm={6}>
+                          <Col sm={6}>
                             <Form.Label className="bold">Suhu (C)</Form.Label>
-                            <Form.Control value={riwayat.suhu} disabled />
+                            <Form.Control placeholder="34" />
                             </Col>
                         </Row>
-                        </Form.Group>
+                      </Form.Group>
 
-                        <Form.Group className="tab1 mb-3">
+                      <Form.Group className="tab1 mb-3">
                         <Form.Label className="bold">Status Pulang</Form.Label>
-                        <Form.Select value={riwayat.status_pulang} disabled>
-                        <option>Rawat Jalan</option>                        <option>Rawat Jalan</option>
-                        <option>Rawat Inap</option>
+                        <Form.Select disabled>
+                        <option>Rawat Jalan</option>
                         </Form.Select>
                         </Form.Group>
                         <Form.Label className="bold tab1">*Pastikan semua data terisi benar</Form.Label>
-                        <Button className="km2 mt-3" onClick={()=>navigate(EDIT_RIWAYAT)}>
-                        <RiEditBoxFill className="edit" size="22px"/>
-                        EDIT
-                        </Button>
+                        <Button className="km2 mt-3">Edit</Button>
                         </Col>
                     </Row>
                 </Container>
-                </Card.Body>
-                </Card>
-
-                </Row>
-            </Container>
-        </div>
-        </AdminLayout>
-    );
+              </Card.Body>
+            </Card>
+          </Row>
+        </Container>
+      </div>
+    </AdminLayout>
+  );
 };
 
 export default RiwayatPasien;

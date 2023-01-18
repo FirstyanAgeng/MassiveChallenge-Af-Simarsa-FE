@@ -15,7 +15,7 @@ const Footer = () => {
                 width="300px"
                 height="100px"
                 alt=""
-                className="mt-5"
+                className="mt-5 logo-footer"
               />
             </Col>
             <Col xs="3" className="mt-5">

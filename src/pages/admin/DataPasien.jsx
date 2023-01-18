@@ -151,13 +151,12 @@ const DataPasien= () => {
                         </Col>
                     </Row>
                 </Container>
-                </Card.Body>
-                </Card>
-
-                </Row>
-            </Container>
-        </div>
+              </Card.Body>
+            </Card>
+          </Row>
+        </Container>
+      </div>
     </AdminLayout>
-    );
+  );
 };
 export default DataPasien;

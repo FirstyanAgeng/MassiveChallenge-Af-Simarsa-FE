@@ -6,9 +6,8 @@ import axios from "axios";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
 import {RiShieldCrossFill, RiEditBoxFill} from "react-icons/ri"
 import AdminLayout from "../../components/AdminLayout";
-import "../../styles/admin.css";
-
 import Ava from "../../assets/images/Ava.png";
+import "../../styles/admin.css";
 
 
 const DetailDokter = () =>{
@@ -168,11 +167,9 @@ const DetailDokter = () =>{
                 </Card>
             </Row>
         </Container>
-        
-            </div>
-        </AdminLayout>
-
-    );
+      </div>
+    </AdminLayout>
+  );
 };
 
 export default DetailDokter;

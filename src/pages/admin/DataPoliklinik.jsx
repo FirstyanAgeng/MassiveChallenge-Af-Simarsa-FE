@@ -1,14 +1,12 @@
-import { Container, Card, Row, Col, Navbar, Nav,} from "react-bootstrap";
+import { Container, Card, Row, Col, Navbar, Nav } from "react-bootstrap";
 import AdminLayout from "../../components/AdminLayout";
-import { ADMIN_DASHBOARD, DATA_POLI} from "../../router";
+import { ADMIN_DASHBOARD, DATA_POLI } from "../../router";
 import { AiFillHome, AiOutlineRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import "../../styles/admin.css";
 
-
-const DataPoliklinik = () =>{
-    const navigate = useNavigate();
-    return(
+const DataPoliklinik = () => {
+  const navigate = useNavigate();
+  return (
     <AdminLayout>
         <div className="DataPoliklinik">
         <Container className="container-nav-home mb-3">
@@ -29,7 +27,7 @@ const DataPoliklinik = () =>{
             </Row>
         </Container>
         
-        <Container className="container-dataDokter">
+        <Container className="cont">
             <Row>
                 <Card className="CardDataDokter card">
                     <Card.Body>
@@ -54,14 +52,12 @@ const DataPoliklinik = () =>{
                                     </Col>
                                     <Col className="mt-3 text-center mt-3">
                                     <button class="btnDataDokter btn btnpad"  onClick={() => navigate(DATA_POLI)}>Lihat data</button>
-                                    <h4 className="prog">
-                                    13/20 kuota terisi</h4>
+                                    <h4 className="prog">13/20 kuota terisi</h4>
                                     </Col>
                                 </Row>
                                 </Card>
                             </Col>
                             
-
                             <Col sm={6}>
                                 <Card className="card2 content mt-3">
                                 <Row>
@@ -70,8 +66,7 @@ const DataPoliklinik = () =>{
                                         <h6 className="text mt-2 mb-5">dr.Anisah Amalia, Sp.P.Rad</h6>
                                     </Col>
                                     <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad" 
-                                    onClick={() => navigate(DATA_POLI)}>Lihat data</button>
+                                    <button class="btnDataDokter btn btnpad" onClick={() => navigate(DATA_POLI)}>Lihat data</button>
                                     <h4 className="prog prog3">7/20 kuota terisi</h4>
                                     </Col>
                                 </Row>
@@ -111,94 +106,137 @@ const DataPoliklinik = () =>{
                             </Col>
                         </Row>
 
-                        <Row className="mt-5">
-                            <Col sm={6}>
-                                <Card className="card2 content mt-3">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI ANAK</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Imade Dikky Kalsa, Sp.A.</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btnpad btn" onClick={() => navigate(DATA_POLI)}>Lihat data</button>
-                                    <h4 className="prog prog1">20/20 kuota terisi</h4>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                            
-                            <Col sm={6}>
-                                <Card className="card2 content mt-3">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI P.DALAM</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.I Gede Arinton, Sp.PD-KGEH,M.Kom,MMR</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad" onClick={() => navigate(DATA_POLI)}>Lihat data</button>
-                                    <h4 className="prog prog2">3/20 kuota terisi</h4>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
+                  <Row className="mt-5">
+                    <Col sm={6}>
+                      <Card className="card2 content mt-3">
+                        <Row>
+                          <Col className="mt-4">
+                            <h6>
+                              <strong>POLI ANAK</strong>
+                            </h6>
+                            <h6 className="text mt-2 mb-5">
+                              dr.Imade Dikky Kalsa, Sp.A.
+                            </h6>
+                          </Col>
+                          <Col className="mt-3 text-center mt-4">
+                            <button
+                              class="btnDataDokter"
+                              onClick={() => navigate(DATA_POLI)}
+                            >
+                              Lihat data
+                            </button>
+                            <h4 className="prog prog1">20/20 kuota terisi</h4>
+                          </Col>
                         </Row>
-                        <Row className="mt-5">
-                            <Col sm={6}>
-                                <Card className="card2 content mt-3">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI KANDUNGAN</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Sutrisno, M.Kes., SP.OG,Subsp.ONK</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btnpad btn" onClick={() => navigate(DATA_POLI)}>Lihat data</button>
-                                    <h4 className="prog prog2">3/20 kuota terisi</h4>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                            
-                            <Col sm={6}>
-                                <Card className="card2 content mt-3">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI P.DALAM</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Achmad Happy Oktavianto, M.Sc, Sp.PD</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad"onClick={() => navigate(DATA_POLI)}>Lihat data</button>
-                                    <h4 className="prog prog2">3/20 kuota terisi</h4>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                        </Row>
-                        <Row className="mt-5">
-                        <Col sm={6}>
-                                <Card className="cardDo1 content mt-3">
-                                <Row>
-                                    <Col  className="mt-4">
-                                        <h6><strong>POLI KANDUNGAN</strong></h6>
-                                        <h6 className="text mt-2 mb-5">dr.Budi Irawan, M.Sc, Sp.OG</h6>
-                                    </Col>
-                                    <Col className="mt-3 text-center mt-4">
-                                    <button class="btnDataDokter btn btnpad" onClick={() => navigate(DATA_POLI)}>Lihat data</button>
-                                    <h4 className="prog prog2">3/20 kuota terisi</h4>
-                                    </Col>
-                                </Row>
-                                </Card>
-                            </Col>
-                        </Row>
+                      </Card>
+                    </Col>
 
-                        </Container>
-                    </Card.Body>
-                </Card>
-            </Row>
-            
+                    <Col sm={6}>
+                      <Card className="card2 content mt-3">
+                        <Row>
+                          <Col className="mt-4">
+                            <h6>
+                              <strong>POLI P.DALAM</strong>
+                            </h6>
+                            <h6 className="text mt-2 mb-5">
+                              dr.I Gede Arinton, Sp.PD-KGEH,M.Kom,MMR
+                            </h6>
+                          </Col>
+                          <Col className="mt-3 text-center mt-4">
+                            <button
+                              class="btnDataDokter"
+                              onClick={() => navigate(DATA_POLI)}
+                            >
+                              Lihat data
+                            </button>
+                            <h4 className="prog prog2">3/20 kuota terisi</h4>
+                          </Col>
+                        </Row>
+                      </Card>
+                    </Col>
+                  </Row>
+                  <Row className="mt-5">
+                    <Col sm={6}>
+                      <Card className="card2 content mt-3">
+                        <Row>
+                          <Col className="mt-4">
+                            <h6>
+                              <strong>POLI KANDUNGAN</strong>
+                            </h6>
+                            <h6 className="text mt-2 mb-5">
+                              dr.Sutrisno, M.Kes., SP.OG,Subsp.ONK
+                            </h6>
+                          </Col>
+                          <Col className="mt-3 text-center mt-4">
+                            <button
+                              class="btnDataDokter"
+                              onClick={() => navigate(DATA_POLI)}
+                            >
+                              Lihat data
+                            </button>
+                            <h4 className="prog prog2">3/20 kuota terisi</h4>
+                          </Col>
+                        </Row>
+                      </Card>
+                    </Col>
+
+                    <Col sm={6}>
+                      <Card className="card2 content mt-3">
+                        <Row>
+                          <Col className="mt-4">
+                            <h6>
+                              <strong>POLI P.DALAM</strong>
+                            </h6>
+                            <h6 className="text mt-2 mb-5">
+                              dr.Achmad Happy Oktavianto, M.Sc, Sp.PD
+                            </h6>
+                          </Col>
+                          <Col className="mt-3 text-center mt-4">
+                            <button
+                              class="btnDataDokter"
+                              onClick={() => navigate(DATA_POLI)}
+                            >
+                              Lihat data
+                            </button>
+                            <h4 className="prog prog2">3/20 kuota terisi</h4>
+                          </Col>
+                        </Row>
+                      </Card>
+                    </Col>
+                  </Row>
+                  <Row className="mt-5">
+                    <Col sm={6}>
+                      <Card className="cardDo1 content mt-3">
+                        <Row>
+                          <Col className="mt-4">
+                            <h6>
+                              <strong>POLI KANDUNGAN</strong>
+                            </h6>
+                            <h6 className="text mt-2 mb-5">
+                              dr.Budi Irawan, M.Sc, Sp.OG
+                            </h6>
+                          </Col>
+                          <Col className="mt-3 text-center mt-4">
+                            <button
+                              class="btnDataDokter"
+                              onClick={() => navigate(DATA_POLI)}
+                            >
+                              Lihat data
+                            </button>
+                            <h4 className="prog prog2">3/20 kuota terisi</h4>
+                          </Col>
+                        </Row>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Container>
+              </Card.Body>
+            </Card>
+          </Row>
         </Container>
-        </div>
-      </AdminLayout>  
-    );
+      </div>
+    </AdminLayout>
+  );
 };
 
 export default DataPoliklinik;

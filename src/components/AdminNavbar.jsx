@@ -1,22 +1,25 @@
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { useHistory } from "react-router-use-history";
 import jwt_decode from "jwt-decode";
 
-import { HOME} from "../router";
+// import { HOME} from "../router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/style.css";
 import "../styles/admin.css"
 import "../pages/Beranda";
 import { IoLogOutOutline } from "react-icons/io5";
+import "../pages/Beranda";
+// import { hover } from "@testing-library/user-event/dist/hover";
+
 
 
 
 const AdminNavbar = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [name, setName] = useState('');
   const [token, setToken] = useState('');
   const [expire, setExpire] = useState('');
@@ -74,7 +77,10 @@ const refreshToken = async () => {
             SIMARSA
           </NavLink>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Navbar.Collapse
+            id="basic-navbar-nav"
+            className="justify-content-end"
+          >
             <Nav>
               <Navbar.Text>
                 <p className="hsatu"><strong>{name}</strong> - Petugas Entry</p>

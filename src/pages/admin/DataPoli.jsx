@@ -71,11 +71,14 @@ const DataPoli = () => {
                     <Table bordered responsive>
                     <thead className="table-light">
                       <tr>
-                        <th >Status<FaSort/></th>
-                        <th >Antrian</th>
-                        <th >Nama Lengkap</th>
-                        <th >Jadwal</th>
-                        <th >Aksi</th>
+                        <th>
+                          Status
+                          <FaSort />
+                        </th>
+                        <th>Antrian</th>
+                        <th>Nama Lengkap</th>
+                        <th>Jadwal</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -106,35 +109,35 @@ const DataPoli = () => {
               </tr>
             ))}
                     </tbody>
-                    </Table>
+                  </Table>
 
-
-                <div class="d-flex justify-content-end">
-                <BsFillArrowLeftCircleFill size="35px" className="kir"/>
-                <ToggleButtonGroup type="radio" name="options" className="left flex-row mb-3 ms-1">
-                    <ToggleButton id="tbg-radio-1"  className="clr">
-                    1
-                    </ToggleButton>
-                    <ToggleButton id="tbg-radio-2" className="wt">
-                    /
-                    </ToggleButton>
-                    <ToggleButton id="tbg-radio-3"  className="clr">
-                    2
-                    </ToggleButton>
-                </ToggleButtonGroup>
-                <BsFillArrowRightCircleFill size="35px" className="kan"/>
-                </div>
-
-                    </Container>
-                    
-                    </Card.Body>
-                    </Card>
-                </Row>
-            </Container>
-
-            </div>
-        </AdminLayout>
-    );
+                  <div class="d-flex justify-content-end">
+                    <BsFillArrowLeftCircleFill size="35px" className="kir" />
+                    <ToggleButtonGroup
+                      type="radio"
+                      name="options"
+                      className="left flex-row mb-3 ms-1"
+                    >
+                      <ToggleButton id="tbg-radio-1" className="clr">
+                        1
+                      </ToggleButton>
+                      <ToggleButton id="tbg-radio-2" className="wt">
+                        /
+                      </ToggleButton>
+                      <ToggleButton id="tbg-radio-3" className="clr">
+                        2
+                      </ToggleButton>
+                    </ToggleButtonGroup>
+                    <BsFillArrowRightCircleFill size="35px" className="kan" />
+                  </div>
+                </Container>
+              </Card.Body>
+            </Card>
+          </Row>
+        </Container>
+      </div>
+    </AdminLayout>
+  );
 };
 
 export default DataPoli;
