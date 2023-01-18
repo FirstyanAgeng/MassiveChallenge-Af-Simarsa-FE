@@ -72,79 +72,81 @@ const DataDokter = () => {
         </Container>
 
         <Container className="container-dataDokter">
+            <Row>
                 <Card className="CardDataDokter pt-3">
+                    <Card.Body>
                         <Row>
-                          <Col>
-                            <Card.Title className="card-title pl-4">
-                            <h5 className="fw-bold title-dataDokter">Data Dokter</h5>
-                            </Card.Title>
-                          </Col>
+                        <Col>
+                        <Card.Title className="card-title pl-4">
+                        <h5 className="fw-bold title-dataDokter">Data Dokter</h5>
+                        </Card.Title>
+                        </Col>
                         
-                          <Col>
-                            <Button className="button-tambahDokter" onClick={handleShow}>
-                            <FaPlus size="14px" className="tambah"/>
-                                Tambah data dokter
-                            </Button>
-                          </Col>
+                        <Col>
+                        <Button className="button-tambahDokter" onClick={handleShow}>
+                        <FaPlus size="14px" className="tambah"/>
+                            Tambah data dokter
+                        </Button>
+                        </Col>
 
                         {/* modal */}
                         <Modal show={show} onHide={handleClose}>
-                          <Form onSubmit={saveDokter}>
-                          <Modal.Header closeButton>
-                            <Modal.Title>Form Tambah Dokter</Modal.Title>
-                          </Modal.Header>
+                        <Form onSubmit={saveDokter}>
+                        <Modal.Header closeButton>
+                        <Modal.Title>Form Tambah Dokter</Modal.Title>
+                        </Modal.Header>
                         
-                          <Modal.Body>
-                              <Form.Group className="mb-3">
-                              <Form.Label className="bold tab1">Nama Dokter</Form.Label>
-                              <Form.Control
-                                  type="text"
-                                  placeholder="Nama dokter"
-                                  autoFocus
-                                  value={name}
-                                  onChange = {(e) => setName(e.target.value)}
-                              />
-                              </Form.Group>
+                        <Modal.Body>
+                            <Form.Group className="mb-3">
+                            <Form.Label className="bold tab1">Nama Dokter</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Nama dokter"
+                                autoFocus
+                                value={name}
+                                onChange = {(e) => setName(e.target.value)}
+                            />
+                            </Form.Group>
 
-                              <Form.Group className="mb-3">
-                              <Form.Label className="bold ">Spesialis:</Form.Label>
-                              <Form.Control
-                                  type="text"
-                                  placeholder="Spesialis"
-                                  autoFocus
-                                  value={spesialis}
-                                  onChange = {(e) => setSpesialis(e.target.value)}
-                              />
-                              </Form.Group>
-                              <Form.Group className="mb-3">
-                              <Form.Label className="bold ">Nomor Telepon</Form.Label>
-                              <Form.Control
-                                  type="number"
-                                  placeholder="Nomor Telepon"
-                                  autoFocus
-                                  value={telp}
-                                  onChange = {(e) => setTelp(e.target.value)}
-                              />
-                              </Form.Group>
-                              <Form.Group className="mb-3">
-                              <Form.Label className="bold ">Password</Form.Label>
-                              <Form.Control
-                                  type="password"
-                                  placeholder="Password"
-                                  autoFocus
-                                  value={password}
-                                  onChange = {(e) => setPassword(e.target.value)}
-                              />
-                              </Form.Group>
-                              <Form.Label className="bold ">Role</Form.Label>
-                              <Form.Select aria-label="Default select example"
-                                  value={role}
-                                  onChange = {(e) => setRole(e.target.value)}>
-                                  <option value="1">Dokter</option>
-                                  <option value="2">Perawat</option>
-                              </Form.Select>
-                          </Modal.Body>
-                          <Modal.Footer>
+                            <Form.Group className="mb-3">
+                            <Form.Label className="bold ">Spesialis:</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Spesialis"
+                                autoFocus
+                                value={spesialis}
+                                onChange = {(e) => setSpesialis(e.target.value)}
+                            />
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                            <Form.Label className="bold ">Nomor Telepon</Form.Label>
+                            <Form.Control
+                                type="number"
+                                placeholder="Nomor Telepon"
+                                autoFocus
+                                value={telp}
+                                onChange = {(e) => setTelp(e.target.value)}
+                            />
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                            <Form.Label className="bold ">Password</Form.Label>
+                            <Form.Control
+                                type="password"
+                                placeholder="Password"
+                                autoFocus
+                                value={password}
+                                onChange = {(e) => setPassword(e.target.value)}
+                            />
+                            </Form.Group>
+                            <Form.Label className="bold ">Role</Form.Label>
+                            <Form.Select aria-label="Default select example"
+                                value={role}
+                                onChange = {(e) => setRole(e.target.value)}>
+                                <option value="1">Dokter</option>
+                                <option value="2">Perawat</option>
+                            </Form.Select>
+                                </Modal.Body>
+                                <Modal.Footer>
                                 <Button className="btnModal" variant="outline-dark" onClick={handleClose} type="submit">
                                     OK
                                 </Button>
@@ -152,7 +154,6 @@ const DataDokter = () => {
                                 </Form>
                             </Modal>
                         </Row>
-                      </Card>
 
                         {/* card poli dokter */}
                         <Container className="text-center mb-5">
@@ -182,12 +183,19 @@ const DataDokter = () => {
                                 </Card>
                             </Col>
                             ))}
+                            
                         </Row>
+
                         </Container>
-            <Row/>
+                    </Card.Body>
+                </Card>
+            </Row>
         </Container>
-      </div>
-    </AdminLayout>
-  );
+
+
+            </div>
+        </AdminLayout>
+    );
+
 };
 export default DataDokter;
