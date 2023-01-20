@@ -19,14 +19,14 @@ const Footer = () => {
               />
             </Col>
             <Col xs="3" className="mt-5">
-              <h3>Tautan Penting</h3>
+              <h3 className="pb-3">Tautan Penting</h3>
               <p>Halaman Utama</p>
               <p>Tentang Kami</p>
               <p>Layanan</p>
               <p>Jadwal Dokter</p>
             </Col>
             <Col xs="5" className="mt-5">
-              <h3>Hubungi Kami</h3>
+              <h3 className="pb-3">Hubungi Kami</h3>
               <p>Telepon: ( 0281 ) 635424</p>
               <p>
                 Email: rsu.bunda@gmail.com / bundacare@rsb-pwt.com

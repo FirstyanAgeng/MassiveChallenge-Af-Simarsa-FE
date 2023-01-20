@@ -44,7 +44,7 @@ const Beranda = () => {
         </Container>
       </div>
       <div className="beranda-layanan container mb-5 pb-5">
-        <h2 className="text-center p-5 judul">Layanan</h2>
+        <h2 className="pt-5 text-center">Layanan</h2>
         <Container>
           <Row className="container my-5">
             <Col xs="7">

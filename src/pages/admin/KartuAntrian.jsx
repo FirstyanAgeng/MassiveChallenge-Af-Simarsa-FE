@@ -44,9 +44,9 @@ const KartuAntrian = () => {
           <Card.Body style={{ marginTop: "0px" }}>
             <Row className="content9 mb-3">
               <p className="mt-2 mb-2 idl">
-                <strong>UM{pasien.id}</strong>
+                <strong>UM0{pasien.id}</strong>
                 <span>
-                  <p className="idl1">Kamis</p>
+                  <p className="idl1">{pasien.jadwal}</p>
                 </span>
               </p>
             </Row>

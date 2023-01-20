@@ -7,6 +7,7 @@ import PicArtikel5 from "../assets/images/artikel5.png";
 import PicArtikel6 from "../assets/images/artikel6.png";
 import PicArtikel7 from "../assets/images/artikel7.png";
 import PicArtikel8 from "../assets/images/artikel8.png";
+import PicArtikel9 from "../assets/images/artikel10.jpg";
 // import SearchIcon from "../assets/images/search-icon.png";
 import deskDok from "../assets/images/deskdok.png";
 import Layout from "../components/Layout";
@@ -195,13 +196,14 @@ const Artikel = () => {
               {/* CARD 9 */}
               <Col className="mb-5">
                 <Card style={{ width: "300px" }} className="isi-kartu2">
-                  <Card.Img variant="top" src={PicArtikel1} />
+                  <Card.Img variant="top" src={PicArtikel9} />
                   <Card.Body>
                     <Card.Text className="desk-card">
-                      <h3>Bahaya Nyeri Yang sepele</h3>
-                      Saraf kejepit adalah tekanan pada saraf oleh jaringan di
-                      sekitar tubuh, seperti tulang, tulang yang mulai rapuh
-                      ditelan usia...
+                      <h3>Makanan Sehat untuk Balita</h3>
+                      <p>
+                        Mulai usia dua tahun, anak balita mulai menjadi pemilih
+                        makanan yang ulung. Terkadang menu yang sama...
+                      </p>
                     </Card.Text>
                     <Link to={DETAIL_ARTIKEL}>Selengkapnya</Link>
                   </Card.Body>

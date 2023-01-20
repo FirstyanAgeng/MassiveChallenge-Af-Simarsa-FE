@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import Telp from "../assets/images/logo-telp.png";
-import Map from "../assets/images/logo-map.png";
+import Map from "../assets/images/map.png";
 import Message from "../assets/images/logo-sms.png";
 import Jam from "../assets/images/logo-jam.png";
 import deskDok from "../assets/images/deskdok.png";
@@ -43,6 +43,7 @@ const HubungiKami = () => {
             </Container>
           </Card.ImgOverlay>
         </Card>
+
         <Container>
           <div className="mt-5 text-center">
             {/* Google Maps */}
@@ -122,22 +123,28 @@ const HubungiKami = () => {
                 <h2>Hubungi Kami</h2>
                 <Card className="card-kami2 mb-3 ">
                   <Card.Body>
-                    <img src={Telp} alt="" className="logo-layanan mb-2 " />
-                    <Card.Title>GAWAT DARURAT</Card.Title>
-                    <Card.Text>
-                      <p>(237) 681-812-255</p>
-                      <p>(237) 666-331-89</p>
+                    <img src={Telp} alt="" className="logo-layanan my-3 ms-2" />
+                    <Card.Text className="ms-2">
+                      <h2>GAWAT DARURAT</h2>
+                      <p>
+                        (237) 681-812-255 <br /> (237) 666-331-89
+                      </p>
                     </Card.Text>
                   </Card.Body>
                 </Card>
                 <Card className="card-kami2 ">
                   <Card.Body>
-                    <img src={Message} alt="" className="logo-layanan mb-2 " />
-                    <Card.Title>EMAIL KAMI</Card.Title>
-                    <Card.Text>
-                      <p>
-                        rsu.bunda@gmail.com / bundacare@rsb-pwt.com /
-                        mgm@rsb-pwt.com
+                    <img
+                      src={Message}
+                      alt=""
+                      className="logo-layanan my-3 ms-2"
+                    />
+
+                    <Card.Text className="ms-2">
+                      <h2>EMAIL KAMI</h2>
+                      <p style={{ fontSize: "15px" }}>
+                        rsu.bunda@gmail.com/ <br />
+                        bundacare@rsb-pwt.com / mgm@rsb-pwt.com
                       </p>
                     </Card.Text>
                   </Card.Body>
@@ -145,11 +152,11 @@ const HubungiKami = () => {
               </Col>
               {/* 3 */}
               <Col xs="2">
-                <Card className="card-kami mb-3" id="card">
+                <Card className="card-kami2 mb-3" id="card">
                   <Card.Body>
-                    <img src={Map} alt="" className="logo-layanan mb-2 " />
-                    <Card.Title>LOKASI</Card.Title>
-                    <Card.Text>
+                    <img src={Map} alt="" className="logo-layanan my-3 ms-2" />
+                    <Card.Text className="ms-2">
+                      <h2>LOKASI</h2>
                       <p>
                         Jl. Pramuka No.249, Pertabatan, Purwokerto Kidul, Kec.
                         Purwokerto
@@ -159,11 +166,13 @@ const HubungiKami = () => {
                 </Card>
                 <Card className="card-kami2">
                   <Card.Body>
-                    <img src={Jam} alt="" className="logo-layanan mb-2 " />
-                    <Card.Title>JAM KERJA</Card.Title>
-                    <Card.Text>
-                      <p>Mon-Sat 09:00-20:00</p>
-                      <p>Sunday Emergency only</p>
+                    <img src={Jam} alt="" className="logo-layanan my-3 ms-2" />
+                    <Card.Text className="ms-2">
+                      <h2>JAM KERJA</h2>
+                      <p>
+                        Mon-Sat 09:00-20:00 <br />
+                        Sunday Emergency only
+                      </p>
                     </Card.Text>
                   </Card.Body>
                 </Card>

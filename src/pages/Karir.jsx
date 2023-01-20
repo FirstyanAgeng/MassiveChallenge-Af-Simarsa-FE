@@ -22,7 +22,9 @@ const Karir = () => {
             <Row>
               <Col xs="3">
                 <div
-                  style={{ backgroundColor: "#D9D9D9" }}
+                  style={{
+                    backgroundColor: "#D9D9D9",
+                  }}
                   className="container py-5 list-karir"
                 >
                   <div className="text-center">
@@ -59,10 +61,15 @@ const Karir = () => {
               </Col>
               <Col xs="9">
                 {" "}
-                <Row className="container mb-5 kartu-Karir py-5 text-center">
+                <Row className="container mb-5 kartu-Karir py-3 text-center">
                   <Col xs="4">Dokter Umum</Col>
                   <Col xs="4">S3 Kedokteran</Col>
                   <Col xs="4">Purwokerto</Col>
+                  <p className="pt-5 px-5" style={{ textAlign: "justify" }}>
+                    Rumah Sakit Bunda Purwokerto membutuhkan Dokter Umum dengan
+                    kriteria: <br />- Pria/wanita <br /> - Pendidikan profesi
+                    Dokter Umum
+                  </p>
 
                   <Link to="/" className="text-center pt-5">
                     Selengkapnya
@@ -73,10 +80,15 @@ const Karir = () => {
                     />
                   </Link>
                 </Row>
-                <Row className="container mb-5 kartu-Karir py-5 text-center">
+                <Row className="container mb-5 kartu-Karir py-3 text-center">
                   <Col xs="4">Perawat</Col>
                   <Col xs="4">S1/D3 Perawat</Col>
                   <Col xs="4">Purwokerto</Col>
+                  <p className="pt-5 px-5" style={{ textAlign: "justify" }}>
+                    Rumah Sakit Bunda Purwokerto membutuhkan Perawat dengan
+                    kriteria: <br />
+                    - Pria/wanita <br /> - Usia maksimal 30 tahun
+                  </p>
 
                   <Link to="/" className="text-center pt-5">
                     Selengkapnya
@@ -87,10 +99,15 @@ const Karir = () => {
                     />
                   </Link>
                 </Row>
-                <Row className="container mb-5 kartu-Karir py-5 text-center">
+                <Row className="container mb-5 kartu-Karir py-3 text-center">
                   <Col xs="4">Pramusaji</Col>
                   <Col xs="4">SMK Tata Boga</Col>
                   <Col xs="4">Purwokerto</Col>
+                  <p className="pt-5 px-5" style={{ textAlign: "justify" }}>
+                    Rumah Sakit Bunda Purwokerto membutuhkan Pramusaji dengan
+                    kriteria: <br />
+                    - Pria/wanita <br /> - Usia maksimal 30 tahun
+                  </p>
 
                   <Link to="/" className="text-center pt-5">
                     Selengkapnya
@@ -101,10 +118,15 @@ const Karir = () => {
                     />
                   </Link>
                 </Row>
-                <Row className="container mb-5 kartu-Karir py-5 text-center">
+                <Row className="container mb-5 kartu-Karir py-3 text-center">
                   <Col xs="4">Dokter Umum</Col>
                   <Col xs="4">S3 Kedokteran</Col>
                   <Col xs="4">Purwokerto</Col>
+                  <p className="pt-5 px-5" style={{ textAlign: "justify" }}>
+                    Rumah Sakit Bunda Purwokerto membutuhkan Dokter Spesialis
+                    Paru dengan kriteria: <br />- Pria/wanita <br />- Pendidikan
+                    profesi Dokter Spesialis Paru
+                  </p>
 
                   <Link to="/" className="text-center pt-5">
                     Selengkapnya

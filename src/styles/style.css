@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 :root {
   --primary-color: #0957de;
@@ -174,6 +174,7 @@ p {
 
 .isi-kartu2 {
   background-color: #ffffff;
+  height: 450px;
   color: #000000;
 }
 
@@ -205,31 +206,52 @@ p {
 }
 
 .kartu-Karir {
-  background-color: #ecf5f8;
+  background-color: #fafafa;
 }
 /* hubungi kami */
+
+.hubungi {
+  height: 220vh;
+}
+
 .card-kami {
   background-color: var(--primary-color);
   width: 230px;
-  height: 230px;
+  height: 250px;
+}
+
+.card-kami h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  color: var(--tertiary-color);
+  font-weight: 700;
 }
 
 .card-kami p {
   font-family: "Work Sans", sans-serif;
   font-size: 16px;
+  font-weight: 400;
   color: var(--tertiary-color);
 }
 
 .card-kami2 {
   background-color: var(--tertiary-color);
   width: 230px;
-  height: 230px;
+  height: 250px;
 }
 
 .card-kami2 p {
   font-family: "Work Sans", sans-serif;
   font-size: 16px;
+  font-weight: 400;
   color: var(--txt-secondary-color);
+}
+
+.card-kami2 h2 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  color: var(--txt-secondary-color);
+  font-weight: 700;
 }
 
 .form {
@@ -263,7 +285,7 @@ p {
 
 /* artikel */
 .artikel {
-  height: 290vh;
+  height: 320vh;
   background-color: #fcfefe;
 }
 
@@ -315,10 +337,6 @@ footer p {
   font-family: "Work Sans", sans-serif;
   font-size: 16px;
   font-weight: 300;
-}
-
-.hubungi {
-  height: 220vh;
 }
 
 .background-filter {
