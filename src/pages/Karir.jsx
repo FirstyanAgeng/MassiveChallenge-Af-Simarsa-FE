@@ -2,7 +2,7 @@
 import deskfas from "../assets/images/fasilitas.png";
 import Arrow from "../assets/images/arrow.png";
 import Layout from "../components/Layout";
-import { Card, Container, Row, Col, Dropdown } from "react-bootstrap";
+import { Card, Container, Row, Col, Dropdown, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 const Karir = () => {
   return (
@@ -34,7 +34,7 @@ const Karir = () => {
                       <Dropdown.Toggle
                         variant="secondary"
                         id="dropdown-basic"
-                        className="w-90"
+                        className="w-75"
                       >
                         Pilih Kategori
                       </Dropdown.Toggle>
@@ -48,21 +48,52 @@ const Karir = () => {
                       </Dropdown.Menu>
                     </Dropdown>
                   </div>
-                  <p className="mt-3">Jenjang pendidikan</p>
-                  <ul>
-                    <li style={{ listStyle: "square" }}>SMK/SMA</li>
-                    <li style={{ listStyle: "square" }}>D1</li>
-                    <li style={{ listStyle: "square" }}>D3</li>
-                    <li style={{ listStyle: "square" }}>S1</li>
-                    <li style={{ listStyle: "square" }}>S2</li>
-                    <li style={{ listStyle: "square" }}>Profesi</li>
+                  <p className="mt-3 ms-4 title-karir">Jenjang pendidikan :</p>
+                  <ul className="mt-1">
+                    <Form.Check
+                      type="checkbox"
+                      id={`default-checkbox`}
+                      label={`SMK/SMA`}
+                    />
+                    <Form.Check
+                      type="checkbox"
+                      id={`default-checkbox`}
+                      label={`D1`}
+                    />
+                    <Form.Check
+                      type="checkbox"
+                      id={`default-checkbox`}
+                      label={`D2`}
+                    />
+                    <Form.Check
+                      type="checkbox"
+                      id={`default-checkbox`}
+                      label={`D3`}
+                    />
+                    <Form.Check
+                      type="checkbox"
+                      id={`default-checkbox`}
+                      label={`S1`}
+                    />
+                    <Form.Check
+                      type="checkbox"
+                      id={`default-checkbox`}
+                      label={`S2`}
+                    />
+                    <Form.Check
+                      type="checkbox"
+                      id={`default-checkbox`}
+                      label={`Profesi`}
+                    />
                   </ul>
                 </div>
               </Col>
               <Col xs="9">
                 {" "}
                 <Row className="container mb-5 kartu-Karir py-3 text-center">
-                  <Col xs="4">Dokter Umum</Col>
+                  <Col xs="4">
+                    <h2 className="ms-3">Dokter Umum</h2>
+                  </Col>
                   <Col xs="4">S3 Kedokteran</Col>
                   <Col xs="4">Purwokerto</Col>
                   <p className="pt-5 px-5" style={{ textAlign: "justify" }}>
@@ -81,7 +112,10 @@ const Karir = () => {
                   </Link>
                 </Row>
                 <Row className="container mb-5 kartu-Karir py-3 text-center">
-                  <Col xs="4">Perawat</Col>
+                  <Col xs="4">
+                    {" "}
+                    <h2 className="ms-3">Perawat</h2>
+                  </Col>
                   <Col xs="4">S1/D3 Perawat</Col>
                   <Col xs="4">Purwokerto</Col>
                   <p className="pt-5 px-5" style={{ textAlign: "justify" }}>
@@ -100,7 +134,10 @@ const Karir = () => {
                   </Link>
                 </Row>
                 <Row className="container mb-5 kartu-Karir py-3 text-center">
-                  <Col xs="4">Pramusaji</Col>
+                  <Col xs="4">
+                    {" "}
+                    <h2 className="ms-3">Pramusaji</h2>
+                  </Col>
                   <Col xs="4">SMK Tata Boga</Col>
                   <Col xs="4">Purwokerto</Col>
                   <p className="pt-5 px-5" style={{ textAlign: "justify" }}>
@@ -119,7 +156,10 @@ const Karir = () => {
                   </Link>
                 </Row>
                 <Row className="container mb-5 kartu-Karir py-3 text-center">
-                  <Col xs="4">Dokter Umum</Col>
+                  <Col xs="4">
+                    {" "}
+                    <h2 className="ms-3">Dokter Umum</h2>
+                  </Col>
                   <Col xs="4">S3 Kedokteran</Col>
                   <Col xs="4">Purwokerto</Col>
                   <p className="pt-5 px-5" style={{ textAlign: "justify" }}>

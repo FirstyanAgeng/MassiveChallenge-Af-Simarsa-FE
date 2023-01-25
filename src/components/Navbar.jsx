@@ -66,14 +66,14 @@ const NavigasiBar = () => {
               <NavLink className="nav-link" to={DAFTAR}>
                 Pendaftaran Online
               </NavLink>
-              <NavLink className="nav-link" to={HUBUNGI}>
-                Hubungi Kami
-              </NavLink>
               <NavLink className="nav-link" to={KARIR}>
                 Karir
               </NavLink>
               <NavLink className="nav-link" to={ARTIKEL}>
                 Artikel
+              </NavLink>
+              <NavLink className="nav-link" to={HUBUNGI}>
+                Hubungi Kami
               </NavLink>
             </Nav>
             <button
